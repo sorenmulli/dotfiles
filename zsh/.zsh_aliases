@@ -1,0 +1,18 @@
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias np='nano -w PKGBUILD'
+alias more=less
+alias "n=cd /home/sorenwh/Nextcloud"
+
+alias programmering="cd /home/sorenwh/Nextcloud/Software/Programmering"
+alias meme="cd /home/sorenwh"
+alias maple="/home/sorenwh/maple2019/bin/maple"
+alias ugenr="curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)'"
+alias corona="w3m https://sundhedspolitisktidsskrift.dk/nyheder/3073-lynoverblik-dagens-tal-og-vigtigste-nyheder-om-coronavirus.html -dump | grep --color=never -e  'Opdateres løbende' -e 'Danmark:'"
+alias p="cd /home/sorenwh/Nextcloud/semester4/fagprojekt/projekt"
+
+alias zshrc="vim ~/dotfiles/zsh/.zshrc"
+alias zshplug="vim ~/dotfiles/zsh/.zsh_plugins.txt"
+alias zshalias="vim ~/dotfiles/zsh/.zsh_aliases"
+alias antiplug="antibody bundle < ~/dotfiles/zsh/.zsh_plugins.txt > ~/dotfiles/zsh/.zsh_plugins.sh"
