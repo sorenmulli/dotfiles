@@ -58,11 +58,14 @@ setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+
+#compatability functions for ohmyzsh plugs
+. ~/dotfiles/zsh/.ohmyzsh_compat
+
 #aliases
 if [ -f ~/dotfiles/zsh/.zsh_aliases ];then
 . ~/dotfiles/zsh/.zsh_aliases
 fi
-
 #My binaries 
 export PATH="$PATH:/home/sorenwh/.sorenbin/bin"
 export PYTHONPATH="${PYTHONPATH}:/home/sorenwh/Nextcloud/semester4/reinforcement/opg/02465students"
@@ -82,3 +85,4 @@ setopt PUSHDMINUS
 
 
 source ~/dotfiles/zsh/.zsh_plugins.sh
+

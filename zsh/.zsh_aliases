@@ -11,6 +11,7 @@ alias maple="/home/sorenwh/maple2019/bin/maple"
 alias ugenr="curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)'"
 alias corona="w3m https://sundhedspolitisktidsskrift.dk/nyheder/3073-lynoverblik-dagens-tal-og-vigtigste-nyheder-om-coronavirus.html -dump | grep --color=never -e  'Opdateres løbende' -e 'Danmark:'"
 alias p="cd /home/sorenwh/Nextcloud/semester4/fagprojekt/projekt"
+alias ls="ls --color=auto"
 
 alias zshrc="vim ~/dotfiles/zsh/.zshrc"
 alias zshplug="vim ~/dotfiles/zsh/.zsh_plugins.txt"
