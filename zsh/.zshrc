@@ -66,6 +66,8 @@ fi
 #My binaries 
 export PATH="$PATH:/home/sorenwh/.sorenbin/bin"
 export PYTHONPATH="${PYTHONPATH}:/home/sorenwh/Nextcloud/semester4/reinforcement/opg/02465students"
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
