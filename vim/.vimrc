@@ -90,6 +90,7 @@ set shiftwidth=4
 " Linebreak on 500 characters
 set lbr
 set tw=500
+set number
 
 set wrap "Wrap lines
 " Remap VIM 0 to first non-blank character
@@ -112,7 +113,6 @@ let g:Tex_MultipleCompileFormats='pdf, aux'
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sleuth'
-Plug 'jmcantrell/vim-diffchanges'
 Plug 'vim-latex/vim-latex'
 
 call plug#end()
