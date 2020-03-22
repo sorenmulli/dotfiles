@@ -4,14 +4,11 @@ SAVEHIST=3000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/sorenwh/.zshrc'
+zstyle :compinstall filename '/home/sorenwh/dotfiles/zsh/.zshrc'
 
 autoload -Uz compinit promptinit
 compinit
 promptinit
-
-
-
 
 # End of lines added by compinstall
 
@@ -66,14 +63,18 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 if [ -f ~/dotfiles/zsh/.zsh_aliases ];then
 . ~/dotfiles/zsh/.zsh_aliases
 fi
+
 #My binaries 
 export PATH="$PATH:/home/sorenwh/.sorenbin/bin"
 export PYTHONPATH="${PYTHONPATH}:/home/sorenwh/Nextcloud/semester4/reinforcement/opg/02465students"
+
+#Vim stuff
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export VIMINIT='source $MYVIMRC'
 export MYVIMRC="~/dotfiles/vim/.vimrc"
 
+#Completion
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
 setopt COMPLETE_ALIASES
@@ -82,8 +83,10 @@ setopt AUTO_MENU
 setopt COMPLETE_IN_WORD
 setopt MENU_COMPLETE
 
+#Cd
 setopt AUTO_CD
 setopt PUSHDMINUS
 
+#Plugins
 source ~/dotfiles/zsh/.zsh_plugins.sh
 
