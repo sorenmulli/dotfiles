@@ -8,7 +8,8 @@ Clone to `~/`
 ### ZSH
 
 `zsh` package from package man.
-`antigen-git` or `zsh-antigen` from package ma.
+
+`antigen-git` or `zsh-antigen` from package man.
 
 Run
 `echo "ZDOTDIR=$HOME/dotfiles/zsh" > .zshenv`
@@ -23,7 +24,7 @@ Run `antiplug` for plugin install.
 Install `gvim` from package man.
 
 Run (for change of ESC and Caps Lock)
-`echo "xmodmap ~/dotfiles/vim/speedswapper" >> .xinitrc"`
+`echo "xmodmap ~/dotfiles/vim/speedswapper" >> .xinitrc`
 
 Set terminal to solarized.
 
