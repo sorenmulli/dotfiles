@@ -83,10 +83,6 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
 " Linebreak on 500 characters
 set lbr
 set tw=500
@@ -106,13 +102,20 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+nmap <leader>t :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>echo $MYFILE<CR>
+nmap <leader>p :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>python $MYFILE<CR>
 
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-sleuth'
+"Plug 'tpope/vim-sleuth'
 Plug 'vim-latex/vim-latex'
 
 call plug#end()
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+

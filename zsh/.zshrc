@@ -85,6 +85,5 @@ setopt MENU_COMPLETE
 setopt AUTO_CD
 setopt PUSHDMINUS
 
-
 source ~/dotfiles/zsh/.zsh_plugins.sh
 
