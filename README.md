@@ -48,3 +48,5 @@ This might work:
 Then make the following run on startup (either edit .desktop in autostart or add in GUI):
 
 `xkbcomp $HOME/.xkbmap ":0"`
+
+A last possibility is to run `speedswapper.sh` at startup.
