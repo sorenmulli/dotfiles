@@ -36,7 +36,7 @@ Run (for change of ESC and Caps Lock)
 
 If `.xinitrc` is ran at startup (not in Ubuntu), insert the following line to `~/.xinitrc` before the `exec` 
 
-`~/dotfiles/vim/speedswapper`
+`xmodmap ~/dotfiles/vim/speedswapper`
 
 For Ubuntu (and other systems using xkb instead of xmodmap), run
 
