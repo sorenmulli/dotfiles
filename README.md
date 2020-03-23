@@ -25,7 +25,7 @@ Install `gvim` or `vim-gtk3` from package man.
 
 Run (for change of ESC and Caps Lock)
 
-`echo "xmodmap ~/dotfiles/vim/speedswapper" >> .xsession`
+`echo "xmodmap ~/dotfiles/vim/speedswapper" >> .xsessionrc`
 
 Set terminal to solarized.
 
