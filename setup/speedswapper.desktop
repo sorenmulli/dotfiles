@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Speedswapper
+Comment=Shift ctrl and escape
+Exec=xmodmap ~/dotfiles/vim/speedswapper
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Application;
