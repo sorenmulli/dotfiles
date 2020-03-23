@@ -2,8 +2,9 @@
 Version=1.0
 Name=Speedswapper
 Comment=Shift ctrl and escape
-Exec=xmodmap ~/dotfiles/vim/speedswapper
+Exec=/usr/bin/xmodmap dotfiles/setup/speedswapper
 Icon=utilities-terminal
+X-GNOME-Autostart-enabled=true
 Terminal=false
 Type=Application
 Categories=Application;
