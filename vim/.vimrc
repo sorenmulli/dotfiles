@@ -58,9 +58,6 @@ endfun
 nnoremap <F10> :call OpenModuleUnderCursor()<CR>
 
 
-" Work config 
-if isdirectory(expand("~/jobxx"))
-
 set history=500
 
 " Enable filetype plugins
