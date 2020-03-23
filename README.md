@@ -38,7 +38,8 @@ This might work:
 
 `cp ~/dotfiles/setup/speedswapper.desktop ~/.config/autostart/speedswapper.desktop`
 
- Another possibility for is the more stable xkb; thus run
+
+ Another possibility is the more stable xkb. For this, run
 
 `xmodmap ~/dotfiles/setup/speedswapper`
 
