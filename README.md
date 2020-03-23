@@ -34,11 +34,11 @@ Run `:PlugInstall` for plugin install.
 ### Key remap
 Run (for change of ESC and Caps Lock)
 
-If `.xinitrc` is ran at startup (not in Ubuntu):
+If `.xinitrc` is ran at startup (not in Ubuntu), insert the following line to `~/.xinitrc` before the `exec` 
 
-`echo -e "xmodmap ~/dotfiles/vim/speedswapper\n$(cat ~/.xinitrc)" > ~/.xinitrc`
+`~/dotfiles/vim/speedswapper`
 
-For Ubuntu, run
+For Ubuntu (and other systems using xkb instead of xmodmap), run
 
 `xmodmap ~/dotfiles/vim/speedswapper`
 
