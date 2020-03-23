@@ -34,16 +34,19 @@ Run `:PlugInstall` for plugin install.
 ### Key remap
 Run (for change of ESC and Caps Lock)
 
-If xmodmap and xdg-autostart are available:
+This might work: 
 
 `cp ~/dotfiles/setup/speedswapper.desktop ~/.config/autostart/speedswapper.desktop`
 
- Another possibility for Ubuntu (and other systems using xkb instead of xmodmap), run
+
+ Another possibility is the more stable xkb. For this, run
 
 `xmodmap ~/dotfiles/setup/speedswapper`
 
 `xkbcomp $DISPLAY $HOME/.xkbmap`
 
-Then add the following to "Startup Applications" meu:
+Then make the following run on startup (either edit .desktop in autostart or add in GUI):
 
-`xkbcomp ~/.xkbmap ":0"`
+`xkbcomp $HOME/.xkbmap ":0"`
+
+A last possibility is to run `speedswapper.sh` at startup.
