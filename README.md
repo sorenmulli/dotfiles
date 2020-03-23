@@ -12,8 +12,11 @@ Clone to `~/`
 `antibody` from AUR or install from [releases page](https://github.com/getantibody/antibody/releases)
 
 Run
+
 `echo "ZDOTDIR=$HOME/dotfiles/zsh" > ~/.zshenv`
+
 then 
+
 `chsh -s $(which zsh)`
 
 Reboot for `chsh` to take effect.
@@ -32,10 +35,15 @@ Run `:PlugInstall` for plugin install.
 Run (for change of ESC and Caps Lock)
 
 If `.xinitrc` is ran at startup (not in Ubuntu)
+
 `echo "xmodmap ~/dotfiles/vim/speedswapper" >> ~/.xinitrc`
 
 For Ubuntu, run
+
 `xmodmap ~/dotfiles/vim/speedswapper`
+
 `xkbcomp $DISPLAY $HOME/.xkbmap`
+
 Then add the following to "Startup Applications" meu:
+
 `xkbcomp /home/user/.xkbmap “:0”`
