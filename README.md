@@ -9,7 +9,7 @@ Clone to `~/`
 
 `zsh` package from package man.
 
-`antigen-git` or `zsh-antigen` from package man.
+`antibody` from AUR or install from [releases page](https://github.com/getantibody/antibody/releases)
 
 Run
 `echo "ZDOTDIR=$HOME/dotfiles/zsh" > .zshenv`
