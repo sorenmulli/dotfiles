@@ -46,4 +46,4 @@ For Ubuntu, run
 
 Then add the following to "Startup Applications" meu:
 
-`xkbcomp /home/user/.xkbmap “:0”`
+`xkbcomp ~/.xkbmap “:0”`
