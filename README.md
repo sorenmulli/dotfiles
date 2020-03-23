@@ -34,13 +34,13 @@ Run `:PlugInstall` for plugin install.
 ### Key remap
 Run (for change of ESC and Caps Lock)
 
-If `.xinitrc` is ran at startup (not in Ubuntu) run:
+If xmodmap and xdg-autostart are available:
 
-`echo ~/dotfiles/setup/speedswapper >> ~/.Xmodmap`
+`cp ~/dotfiles/setup/speedswapper.desktop ~/.config/autostart/speedswapper.desktop`
 
-For Ubuntu (and other systems using xkb instead of xmodmap), run
+ Another possibility for Ubuntu (and other systems using xkb instead of xmodmap), run
 
-`xmodmap ~/dotfiles/vim/speedswapper`
+`xmodmap ~/dotfiles/setup/speedswapper`
 
 `xkbcomp $DISPLAY $HOME/.xkbmap`
 
