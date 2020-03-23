@@ -1,8 +1,65 @@
+ " Install vim-plug if it isn't already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+call plug#begin('~/.vim/plugged')
+"LaTeX
+Plug 'vim-latex/vim-latex'
+
+" Mojolicious syntax highlighting (vores web-framework):
+Plug 'yko/mojo.vim'
+
+" LESS syntax highlighting
+Plug 'groenewege/vim-less'
+
+" Bedre perl-highlighting
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
+
+" NeoMake (håndterer bl.a. linting)
+Plug 'neomake/neomake'
+
+" vim-test - lader dig køre perl-tests inde fra din editor
+Plug 'janko-m/vim-test'
+
+" Vores egne vim-moduler
+if isdirectory(expand("~/dev-utils"))
+   Plug '~/dev-utils/conf/vim'
+end
+call plug#end()
+
+" vim-perl configuration {{{ 
+
+" highlight advanced perl vars inside strings                                                                                                                                                               
+let perl_extended_vars=1                                                                                                                                                               
+
+" do highlighting on POD comments                                                                                                                                                               
+let perl_include_pod=1                                                                                                                                                               
+
+" increase number of lines used when syntax highlighting                                                                                                                                                               
+let perl_sync_dist=1000                                                                                                                                                               
+autocmd BufEnter * :syntax sync minlines=300  
+
+" allow subroutine signatures                                                                                                                                                               
+let perl_sub_signatures=1    
+
+
+" }}} 
+
+fun! OpenModuleUnderCursor()
+    set iskeyword+=:
+    let currentIdent = expand('<cword>')
+    set iskeyword-=:
+    e `=system("perlopen -f " . currentIdent)`
+endfun
+
+nnoremap <F10> :call OpenModuleUnderCursor()<CR>
+
+
+" Work config 
+if isdirectory(expand("~/jobxx"))
 
 set history=500
 
@@ -108,14 +165,8 @@ nmap <leader>p :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>pyth
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
 
-call plug#begin('~/.vim/plugged')
-
-"Plug 'tpope/vim-sleuth'
-Plug 'vim-latex/vim-latex'
-
-call plug#end()
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
-
+set shiftround
