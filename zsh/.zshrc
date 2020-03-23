@@ -22,22 +22,29 @@ promptinit
 #A lot of standard Manjaro settings about colours
 . ~/dotfiles/zsh/.manjaro_standard
 
+if [ -d "~/jobxx" ]; then
+    export PATH=/home/swho/bin:/home/swho/.local/bin:/home/perl/bin:/home/swho/dev-utils/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/swho/jobxx/bin:/home/swho/.fzf/bin:$PATH
+#My binaries 
+else 
+    export PATH="$PATH:/home/sorenwh/.sorenbin/bin"
+    export PYTHONPATH="${PYTHONPATH}:/home/sorenwh/Nextcloud/semester4/reinforcement/opg/02465students"
 
-#Anaconda settings
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/sorenwh/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/sorenwh/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/sorenwh/anaconda3/etc/profile.d/conda.sh"
+    #Anaconda settings
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/sorenwh/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="/home/sorenwh/anaconda3/bin:$PATH"
+        if [ -f "/home/sorenwh/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/sorenwh/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/sorenwh/anaconda3/bin:$PATH"
+        fi
     fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+    unset __conda_setup
+    # <<< conda initialize <<<
+fi 
 
 #History
 HISTFILE=~/dotfiles/zsh/.histfile
@@ -63,10 +70,6 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 if [ -f ~/dotfiles/zsh/.zsh_aliases ];then
 . ~/dotfiles/zsh/.zsh_aliases
 fi
-
-#My binaries 
-export PATH="$PATH:/home/sorenwh/.sorenbin/bin"
-export PYTHONPATH="${PYTHONPATH}:/home/sorenwh/Nextcloud/semester4/reinforcement/opg/02465students"
 
 #Vim stuff
 export VISUAL=vim
