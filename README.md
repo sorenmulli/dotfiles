@@ -12,7 +12,7 @@ Clone to `~/`
 `antibody` from AUR or install from [releases page](https://github.com/getantibody/antibody/releases)
 
 Run
-`echo "ZDOTDIR=$HOME/dotfiles/zsh" > .zshenv`
+`echo "ZDOTDIR=$HOME/dotfiles/zsh" > ~/.zshenv`
 then 
 `chsh -s $(which zsh)`
 
@@ -25,7 +25,7 @@ Install `gvim` or `vim-gtk3` from package man.
 
 Run (for change of ESC and Caps Lock)
 
-`echo "xmodmap ~/dotfiles/vim/speedswapper" >> .xsessionrc`
+`echo "xmodmap ~/dotfiles/vim/speedswapper" >> ~/.Xresources`
 
 Set terminal to solarized.
 
