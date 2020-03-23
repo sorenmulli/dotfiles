@@ -24,7 +24,8 @@ Run `antiplug` for plugin install.
 Install `gvim` or `vim-gtk3` from package man.
 
 Run (for change of ESC and Caps Lock)
-`echo "xmodmap ~/dotfiles/vim/speedswapper" >> .xinitrc`
+
+`echo "xmodmap ~/dotfiles/vim/speedswapper" >> .xsessionrc`
 
 Set terminal to solarized.
 
