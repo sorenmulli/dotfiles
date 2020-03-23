@@ -21,7 +21,7 @@ Run `antiplug` for plugin install.
 
 ### VIM
 
-Install `gvim` from package man.
+Install `gvim` or `vim-gtk3` from package man.
 
 Run (for change of ESC and Caps Lock)
 `echo "xmodmap ~/dotfiles/vim/speedswapper" >> .xinitrc`
