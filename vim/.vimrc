@@ -5,7 +5,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-let g:SleuthDefaultWidth = "4"
 call plug#begin('~/.vim/plugged')
 "LaTeX
 Plug 'vim-latex/vim-latex'
@@ -52,17 +51,18 @@ let perl_sub_signatures=1
 
 " }}} 
 
-fun! OpenModuleUnderCursor()
-  set iskeyword+=:
-  let currentIdent = expand('<cword>')
-  set iskeyword-=:
-  e `=system("perlopen -f " . currentIdent)`
-endfun
+source ~/dotfiles/vim/helpers.vim
+
 
 nnoremap <F10> :call OpenModuleUnderCursor()<CR>
 
-
 set history=500
+
+" Always show the status line
+set laststatus=2
+
+" Format the status line
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 " Enable filetype plugins
 filetype plugin on
@@ -118,6 +118,7 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+
 " Add a bit extra margin to the left
 set foldcolumn=1
 
@@ -137,9 +138,6 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" Search with space
-map <space> /
-map <C-space> ?
 " Control windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -158,6 +156,16 @@ let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+map <space> /
+map <C-space> ?
+
+" Visual mode pressing * or # searches for the current selection
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -183,16 +191,38 @@ map 0 ^
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
 
+noremap <leader>p "*p
+noremap <leader>y "+y
+noremap <leader>d "+d
+
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 nmap <leader>n :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>echo $MYFILE<CR>
-nmap <leader>p :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>python $MYFILE<CR>
+nmap <leader>m :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>python $MYFILE<CR>
 
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
+
+nnoremap o o<Esc>
+nnoremap O O<Esc>
+
+
+
+
+
+" Easy indentation
+inoremap <S-Tab> <C-O><lt><lt>
+nnoremap <Tab> >>
+nnoremap <S-Tab> <lt><lt>
+vnoremap <Tab> >
+vnoremap <S-Tab> <lt>
+
+call neomake#configure#automake('nrwi', 500)
 
 set softtabstop=0
 set noexpandtab
@@ -200,3 +230,7 @@ set shiftwidth=4
 set autoindent
 set shiftround
 set tabstop=4
+let g:SleuthDefaultWidth = "4"
+
+
+
