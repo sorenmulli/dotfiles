@@ -51,6 +51,24 @@ let perl_sub_signatures=1
 
 " }}} 
 
+let g:neomake_python_pylint_maker = {
+  \ 'args': [
+  \ '-d', 'C0103, C0111, E302, W191, E223, E117, E501, E202, mixed-indentation, trailing-whitespace, line-too-long, bad-whitespace, bad-continuation, too-many-instance-attributes, too-many-arguments, too-many-locals, multiple-statements',
+  \ '-f', 'text',
+  \ '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg}"',
+  \ '-r', 'n'
+  \ ],
+  \ 'errorformat':
+  \ '%A%f:%l:%c:%t: %m,' .
+  \ '%A%f:%l: %m,' .
+  \ '%A%f:(%l): %m,' .
+  \ '%-Z%p^%.%#,' .
+  \ '%-G%.%#',
+  \ }
+let g:neomake_python_enabled_makers = ['pylint']
+
+
+
 source ~/dotfiles/vim/helpers.vim
 
 
@@ -151,6 +169,14 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
 
+
+
+" Close the current buffer
+map <leader>bd :Bclose<cr>:tabclose<cr>gT
+
+" Close all the buffers
+map <leader>ba :bufdo bd<cr>
+
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
@@ -177,6 +203,10 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" Delete trailing whitespaces on save for some filetypes
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+endif
 " Linebreak on 500 characters
 set lbr
 set tw=500
