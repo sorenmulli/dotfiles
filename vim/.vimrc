@@ -9,6 +9,10 @@ call plug#begin('~/.vim/plugged')
 "LaTeX
 Plug 'vim-latex/vim-latex'
 
+" Git support
+
+Plug 'tpope/vim-fugitive'
+
 " Follow file indent
 Plug 'xeyownt/vim-sleuth'
 
