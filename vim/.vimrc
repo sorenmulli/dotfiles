@@ -267,4 +267,6 @@ set tabstop=4
 let g:SleuthDefaultWidth = "4"
 
 
-
+ " Commenting blocks of code.
+noremap <leader><Space> :call ToggleComment()<cr>
+vnoremap <leader><Space> :call ToggleComment()<cr>
