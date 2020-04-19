@@ -3,6 +3,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -33,7 +34,7 @@ Plug 'janko-m/vim-test'
 
 " Vores egne vim-moduler
 if isdirectory(expand("~/dev-utils"))
-  Plug '~/dev-utils/conf/vim'
+  Plug '~/dev-utils/conf/vim' 
 end
 call plug#end()
 
@@ -75,8 +76,8 @@ let g:neomake_python_enabled_makers = ['pylint']
 
 source ~/dotfiles/vim/helpers.vim
 
-
-nnoremap <F10> :call OpenModuleUnderCursor()<CR>
+nnoremap <F9> :call OpenModuleUnderCursor()<CR>
+nnoremap <F8> :Neomake<CR>
 
 set history=500
 
@@ -159,6 +160,15 @@ set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
+
+"Settings dependant on jobxx develop machine or not
+if isdirectory(expand("~/jobxx"))
+  set expandtab
+else
+  set noexpandtab
+  set softtabstop=0
+  call neomake#configure#automake('nrwi', 500)
+endif
 
 " Control windows
 map <C-j> <C-W>j
@@ -256,10 +266,7 @@ nnoremap <S-Tab> <lt><lt>
 vnoremap <Tab> >
 vnoremap <S-Tab> <lt>
 
-call neomake#configure#automake('nrwi', 500)
 
-set softtabstop=0
-set noexpandtab
 set shiftwidth=4
 set autoindent
 set shiftround
@@ -270,3 +277,5 @@ let g:SleuthDefaultWidth = "4"
  " Commenting blocks of code.
 noremap <leader><Space> :call ToggleComment()<cr>
 vnoremap <leader><Space> :call ToggleComment()<cr>
+
+
