@@ -31,6 +31,9 @@ Plug 'neomake/neomake'
 " vim-test - lader dig køre perl-tests inde fra din editor
 Plug 'janko-m/vim-test'
 
+" file system integration
+Plug 'francoiscabrol/ranger.vim'
+
 " Vores egne vim-moduler
 if isdirectory(expand("~/dev-utils"))
   Plug '~/dev-utils/conf/vim'
@@ -77,6 +80,8 @@ source ~/dotfiles/vim/helpers.vim
 
 
 nnoremap <F10> :call OpenModuleUnderCursor()<CR>
+
+let g:ranger_replace_netrw = 1 // open ranger when vim open a directory
 
 set history=500
 
