@@ -30,6 +30,10 @@ Set terminal to solarized.
 
 Run `:PlugInstall` for plugin install.
 
+### ranger
+
+Install `ranger`, then create `~/.config/rc.conf` with content `source ~/dotfiles/ranger/rc.conf`
+
 
 ### Key remap
 Run (for change of ESC and Caps Lock)
