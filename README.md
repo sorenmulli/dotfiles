@@ -35,14 +35,6 @@ Run `:PlugInstall` for plugin install.
 Install `ranger`, then create `~/.config/rc.conf` with content `source ~/dotfiles/ranger/rc.conf`
 Install `w3m` for image previews.
 
-### i3
-
-Currently using with plasma and following https://github.com/avivace/dotfiles 
-
-Create `~/.config/i3/config` with content
-`source $HOME/dotfiles/i3/i3config`
-
-
 
 ### Key remap
 Run (for change of ESC and Caps Lock)
