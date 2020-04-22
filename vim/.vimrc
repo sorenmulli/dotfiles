@@ -82,7 +82,7 @@ source ~/dotfiles/vim/helpers.vim
 nnoremap <F9> :call OpenModuleUnderCursor()<CR>
 nnoremap <F8> :Neomake<CR>
 
-let g:ranger_replace_netrw = 1 // open ranger when vim open a directory
+let g:ranger_replace_netrw = 1
 
 set history=500
 
