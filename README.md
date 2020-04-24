@@ -38,6 +38,9 @@ Install `w3m` for image previews.
 ### tmux
 Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
+### KDE and app visuals
+kwin tiling script + settings
+
 ### Key remap
 Run (for change of ESC and Caps Lock)
 
