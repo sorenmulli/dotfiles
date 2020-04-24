@@ -163,6 +163,9 @@ set background=dark
 " Set utf8 as standard encoding
 set encoding=utf8
 
+" to help with tmux
+set mouse=a
+
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 

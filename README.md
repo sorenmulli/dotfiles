@@ -35,6 +35,8 @@ Run `:PlugInstall` for plugin install.
 Install `ranger`, then create `~/.config/rc.conf` with content `source ~/dotfiles/ranger/rc.conf`
 Install `w3m` for image previews.
 
+### tmux
+Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ### Key remap
 Run (for change of ESC and Caps Lock)
