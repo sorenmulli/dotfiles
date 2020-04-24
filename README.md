@@ -35,7 +35,9 @@ Run `:PlugInstall` for plugin install.
 Install `ranger`, then create `~/.config/rc.conf` with content `source ~/dotfiles/ranger/rc.conf`
 Install `w3m` for image previews.
 
+### KDE and app visuals
 
+Firefox theme https://addons.mozilla.org/en-US/firefox/addon/dark-transparent-blurr/?src=search
 ### Key remap
 Run (for change of ESC and Caps Lock)
 
