@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-latex/vim-latex'
 
 " Git support
-
 Plug 'tpope/vim-fugitive'
 
 " Follow file indent
@@ -35,12 +34,21 @@ Plug 'janko-m/vim-test'
 " file system integration
 Plug 'francoiscabrol/ranger.vim'
 
+" Python folding
+Plug 'tmhedberg/SimpylFold'
+Plug 'Konfekt/FastFold'
+
+" Python completion
+Plug 'Valloric/YouCompleteMe'
+
 " Vores egne vim-moduler
 if isdirectory(expand("~/dev-utils"))
   Plug '~/dev-utils/conf/vim' 
 end
 call plug#end()
 
+let mapleader = ","
+"
 " vim-perl configuration {{{ 
 
 " highlight advanced perl vars inside strings                                                                                                                                                               
@@ -76,14 +84,14 @@ let g:neomake_python_pylint_maker = {
 let g:neomake_python_enabled_makers = ['pylint']
 
 
-
 source ~/dotfiles/vim/helpers.vim
 
 nnoremap <F9> :call OpenModuleUnderCursor()<CR>
 nnoremap <F8> :Neomake<CR>
 
+let g:ycm_autoclose_preview_window_after_completion=1
 let g:ranger_replace_netrw = 1
-
+let g:SimpylFold_docstring_preview=1
 set history=500
 
 " Always show the status line
@@ -96,7 +104,6 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 filetype plugin on
 filetype indent on
 
-let mapleader = ","
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -192,6 +199,8 @@ map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
 
 
+"go to definition
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -238,7 +247,10 @@ set wrap "Wrap lines
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-
+"Folding colour
+hi Folded ctermbg=235
+hi FoldColumn ctermbg=235
+hi SignColumn ctermbg=235
 " Fast saving
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
@@ -262,10 +274,6 @@ let g:Tex_MultipleCompileFormats='pdf, aux'
 
 nnoremap o o<Esc>
 nnoremap O O<Esc>
-
-
-
-
 
 " Easy indentation
 inoremap <S-Tab> <C-O><lt><lt>
