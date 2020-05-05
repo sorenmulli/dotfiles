@@ -13,16 +13,15 @@ alias zshalias="vim ~/dotfiles/zsh/.zsh_aliases"
 alias antiplug="antibody bundle < ~/dotfiles/zsh/.zsh_plugins.txt > ~/dotfiles/zsh/.zsh_plugins.sh"
 alias vimrc="vim ~/dotfiles/vim/.vimrc"
 
-
-alias maple="/home/sorenwh/maple2019/bin/maple"
-
-alias pulldiff="git diff master@{1} master"
-
 alias programmering="cd /home/sorenwh/Nextcloud/Software/Programmering"
 alias meme="cd /home/sorenwh"
 alias p="cd /home/sorenwh/Nextcloud/semester4/fagprojekt/projekt"
 
 
+alias maple="/home/sorenwh/maple2019/bin/maple"
+
+alias vimgchange='vim -p $(git ls-files -o -m --exclude-standard)'
+alias pulldiff="git diff master@{1} master"
+
 
 alias ugenr="curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)'"
-
