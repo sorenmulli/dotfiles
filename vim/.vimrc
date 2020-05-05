@@ -41,6 +41,10 @@ Plug 'Konfekt/FastFold'
 " Python completion
 Plug 'Valloric/YouCompleteMe'
 
+" Snippets
+Plug 'sirver/UltiSnips'
+Plug 'honza/vim-snippets'
+
 " Vores egne vim-moduler
 if isdirectory(expand("~/dev-utils"))
   Plug '~/dev-utils/conf/vim' 
@@ -69,7 +73,7 @@ let perl_sub_signatures=1
 
 let g:neomake_python_pylint_maker = {
   \ 'args': [
-  \ '-d', 'C0103, C0111, E302, W191, E223, E117, E501, E202, mixed-indentation, trailing-whitespace, line-too-long, bad-whitespace, bad-continuation, too-many-instance-attributes, too-many-arguments, too-many-locals, multiple-statements',
+  \ '-d', 'C0103, C0111, E302, W191, E223, E117, E501, E202, mixed-indentation, trailing-whitespace, line-too-long, bad-whitespace, bad-continuation, too-many-instance-attributes, too-many-arguments, too-many-locals, multiple-statements, len-as-condition',
   \ '-f', 'text',
   \ '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg}"',
   \ '-r', 'n'
@@ -83,7 +87,6 @@ let g:neomake_python_pylint_maker = {
   \ }
 let g:neomake_python_enabled_makers = ['pylint']
 
-
 source ~/dotfiles/vim/helpers.vim
 
 nnoremap <F9> :call OpenModuleUnderCursor()<CR>
@@ -92,6 +95,23 @@ nnoremap <F8> :Neomake<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ranger_replace_netrw = 1
 let g:SimpylFold_docstring_preview=1
+"ULTISNIPS
+" Trigger configuration.
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-x>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+" Snip settings
+
+let g:UltiSnipsEditSplit="tabdo"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/dotfiles/vim/mysnips']
+
+" Personal settings
+let g:snips_author="Søren Winkel Holm"
+let g:snips_email="swholm@protonmail.com"
+let g:snips_github="github.com/sorenmulli"
+
+
 set history=500
 
 " Always show the status line
@@ -201,7 +221,6 @@ map <leader>t<leader> :tabnext
 
 "go to definition
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
@@ -246,7 +265,10 @@ set number
 set wrap "Wrap lines
 " Remap VIM 0 to first non-blank character
 map 0 ^
-
+"
+"Pop up colour
+hi Pmenu ctermbg=gray
+"
 "Folding colour
 hi Folded ctermbg=235
 hi FoldColumn ctermbg=235
