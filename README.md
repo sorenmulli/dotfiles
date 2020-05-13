@@ -32,7 +32,7 @@ Run `:PlugInstall` for plugin install.
 
 ### konsole
 `ln -s ~/dotfiles/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme`
-`ln -s ~/dotfiles/konsole/Shell.profile ~/.local/share/konsole/WhiteOnBlack.colorscheme`
+`ln -s ~/dotfiles/konsole/Shell.profile ~/.local/share/konsole/Shell.profile`
 
 ### ranger
 
