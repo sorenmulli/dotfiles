@@ -36,7 +36,7 @@ Run `:PlugInstall` for plugin install.
 
 ### ranger
 
-Install `ranger`, then create `~/.config/rc.conf` with content `source ~/dotfiles/ranger/rc.conf`
+Install `ranger`, then create `~/.config/ranger/rc.conf` with content `source ~/dotfiles/ranger/rc.conf`
 Install `w3m` for image previews.
 
 ### tmux
