@@ -8,10 +8,13 @@ endif
 
 call plug#begin('~/.vim/plugged')
 "LaTeX
-Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
 
 " Git support
 Plug 'tpope/vim-fugitive'
+
+" Using quoting
+Plug 'tpope/vim-surround'
 
 " Follow file indent
 Plug 'xeyownt/vim-sleuth'
@@ -21,6 +24,7 @@ Plug 'yko/mojo.vim'
 
 " LESS syntax highlighting
 Plug 'groenewege/vim-less'
+
 
 " Bedre perl-highlighting
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
@@ -33,6 +37,10 @@ Plug 'janko-m/vim-test'
 
 " file system integration
 Plug 'francoiscabrol/ranger.vim'
+
+" More colors
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'vim-python/python-syntax'
 
 " Python folding
 Plug 'tmhedberg/SimpylFold'
@@ -52,6 +60,7 @@ end
 call plug#end()
 
 let mapleader = ","
+let maplocalleader = '.'
 "
 " vim-perl configuration {{{ 
 
@@ -91,6 +100,13 @@ source ~/dotfiles/vim/helpers.vim
 
 nnoremap <F9> :call OpenModuleUnderCursor()<CR>
 nnoremap <F8> :Neomake<CR>
+
+"TeX stuff
+let g:vimtex_quickfix_latexlog = {'default' : 0}
+autocmd FileType tex set spell
+
+let g:python_highlight_all = 1
+let g:python_highlight_indent_errors  = 0
 
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ranger_replace_netrw = 1
@@ -205,6 +221,9 @@ else
   call neomake#configure#automake('nrwi', 500)
 endif
 
+" Run checktime in buffers, but avoiding the "Command Line" (q:) window
+au CursorHold * if getcmdwintype() == '' | checktime | endif
+
 " Control windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -221,11 +240,22 @@ map <leader>t<leader> :tabnext
 
 "go to definition
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
+
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
+" Specify the behavior when switching between buffers 
+try
+  set switchbuf=useopen,usetab,newtab
+  set stal=2
+catch
+endtry
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -234,7 +264,6 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
-map <C-space> ?
 
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
@@ -252,6 +281,10 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Quickly edit/reload this configuration file
+nnoremap gev :tabedit $MYVIMRC<CR>
+nnoremap gsv :so $MYVIMRC<CR>
 
 " Delete trailing whitespaces on save for some filetypes
 if has("autocmd")
@@ -291,8 +324,6 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 nmap <leader>n :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>echo $MYFILE<CR>
 nmap <leader>m :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>python $MYFILE<CR>
 
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats='pdf, aux'
 
 nnoremap o o<Esc>
 nnoremap O O<Esc>
