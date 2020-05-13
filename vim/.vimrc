@@ -109,6 +109,7 @@ let g:python_highlight_all = 1
 let g:python_highlight_indent_errors  = 0
 
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_server_python_interpreter = '/home/sorenwh/anaconda3/bin/python'
 let g:ranger_replace_netrw = 1
 let g:SimpylFold_docstring_preview=1
 "ULTISNIPS
@@ -321,8 +322,8 @@ map <leader>pp :setlocal paste!<cr>
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-nmap <leader>n :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>echo $MYFILE<CR>
-nmap <leader>m :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>python $MYFILE<CR>
+" nmap <leader>n :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>echo $MYFILE<CR>
+" nmap <leader>m :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>python $MYFILE<CR>
 
 
 nnoremap o o<Esc>

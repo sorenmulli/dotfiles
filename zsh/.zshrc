@@ -97,6 +97,9 @@ export EDITOR="$VISUAL"
 export VIMINIT='source $MYVIMRC'
 export MYVIMRC="~/dotfiles/vim/.vimrc"
 
+#Python stuff
+export PYTHONBREAKPOINT='ipdb.set_trace'
+
 #Completion
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
