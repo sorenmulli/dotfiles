@@ -7,8 +7,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-"LaTeX
-Plug 'lervag/vimtex'
 
 " Git support
 Plug 'tpope/vim-fugitive'
@@ -19,21 +17,11 @@ Plug 'tpope/vim-surround'
 " Follow file indent
 Plug 'xeyownt/vim-sleuth'
 
-" Mojolicious syntax highlighting (vores web-framework):
-Plug 'yko/mojo.vim'
-
-" LESS syntax highlighting
-Plug 'groenewege/vim-less'
-
-
 " Bedre perl-highlighting
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
 
 " NeoMake (håndterer bl.a. linting)
 Plug 'neomake/neomake'
-
-" vim-test - lader dig køre perl-tests inde fra din editor
-Plug 'janko-m/vim-test'
 
 " file system integration
 Plug 'francoiscabrol/ranger.vim'
@@ -46,17 +34,29 @@ Plug 'vim-python/python-syntax'
 Plug 'tmhedberg/SimpylFold'
 Plug 'Konfekt/FastFold'
 
-" Python completion
-Plug 'Valloric/YouCompleteMe'
-
 " Snippets
 Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
 
-" Vores egne vim-moduler
-if isdirectory(expand("~/dev-utils"))
+" Modules loaded dependant on whether on job or not
+if isdirectory(expand("/home/sorenwh"))
+  "LaTeX
+  Plug 'lervag/vimtex'
+  
+  " Python completion
+  Plug 'Valloric/YouCompleteMe'
+else
+  " vim-test - lader dig køre perl-tests inde fra din editor
+  Plug 'janko-m/vim-test'
   Plug '~/dev-utils/conf/vim' 
-end
+
+  " Mojolicious syntax highlighting (vores web-framework):
+  Plug 'yko/mojo.vim'
+
+  " LESS syntax highlighting
+  Plug 'groenewege/vim-less'
+endif
+
 call plug#end()
 
 let mapleader = ","
@@ -213,12 +213,12 @@ set mouse=a
 set ffs=unix,dos,mac
 
 "Settings dependant on jobxx develop machine or not
-if isdirectory(expand("~/jobxx"))
-  set expandtab
-else
+if isdirectory(expand("/home/sorenwh"))
   set noexpandtab
   set softtabstop=0
   call neomake#configure#automake('nrwi', 500)
+else
+  set expandtab
 endif
 
 " Run checktime in buffers, but avoiding the "Command Line" (q:) window
