@@ -118,6 +118,9 @@ bindkey '^M' my-accept-line
 #Plugins
 source ~/dotfiles/zsh/.zsh_plugins.sh
 
+#My CLI functions
+source ~/dotfiles/zsh/myfuncs
+
 #Quick access to school subjects
 cdpath=$HOME/Nextcloud/semester4
 
