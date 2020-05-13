@@ -30,6 +30,10 @@ Set terminal to solarized.
 
 Run `:PlugInstall` for plugin install.
 
+### konsole
+`ln -s ~/dotfiles/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme`
+`ln -s ~/dotfiles/konsole/Shell.profile ~/.local/share/konsole/WhiteOnBlack.colorscheme`
+
 ### ranger
 
 Install `ranger`, then create `~/.config/rc.conf` with content `source ~/dotfiles/ranger/rc.conf`
