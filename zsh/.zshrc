@@ -100,6 +100,9 @@ export MYVIMRC="~/dotfiles/vim/.vimrc"
 #Python stuff
 export PYTHONBREAKPOINT='ipdb.set_trace'
 
+#TeX stuff
+export TEXINPUTS='.:~/Nextcloud/Software/LaTeX/EndLosung:'
+
 #Completion
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
