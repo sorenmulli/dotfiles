@@ -36,13 +36,12 @@ Plug 'Konfekt/FastFold'
 
 " Snippets
 Plug 'sirver/UltiSnips'
-Plug 'honza/vim-snippets'
 
 " Modules loaded dependant on whether on job or not
 if isdirectory(expand("/home/sorenwh"))
   "LaTeX
   Plug 'lervag/vimtex'
-  
+
   " Python completion
   Plug 'Valloric/YouCompleteMe'
 else
@@ -104,6 +103,9 @@ nnoremap <F8> :Neomake<CR>
 "TeX stuff
 let g:vimtex_quickfix_latexlog = {'default' : 0}
 autocmd FileType tex set spell
+let g:tex_flavor = "latex"
+set conceallevel=2
+let g:tex_conceal="abdgm"
 
 let g:python_highlight_all = 1
 let g:python_highlight_indent_errors  = 0
