@@ -298,11 +298,12 @@ endif
 set lbr
 set tw=500
 set number
+set relativenumber
 
 set wrap "Wrap lines
 " Remap VIM 0 to first non-blank character
 map 0 ^
-"
+
 "Pop up colour
 hi Pmenu ctermbg=gray
 "
