@@ -102,6 +102,7 @@ nnoremap <F8> :Neomake<CR>
 
 "TeX stuff
 let g:vimtex_quickfix_latexlog = {'default' : 0}
+set spelllang=en_gb,da
 autocmd FileType tex set spell
 let g:tex_flavor = "latex"
 set conceallevel=2
