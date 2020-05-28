@@ -103,6 +103,7 @@ nnoremap <F8> :Neomake<CR>
 
 "TeX stuff
 let g:vimtex_quickfix_latexlog = {'default' : 0}
+set spelllang=en_gb,da
 autocmd FileType tex set spell
 let g:tex_flavor = "latex"
 set conceallevel=2
@@ -298,11 +299,12 @@ endif
 set lbr
 set tw=500
 set number
+set relativenumber
 
 set wrap "Wrap lines
 " Remap VIM 0 to first non-blank character
 map 0 ^
-"
+
 "Pop up colour
 hi Pmenu ctermbg=gray
 "
