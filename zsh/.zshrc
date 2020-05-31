@@ -26,9 +26,6 @@ if [ -d "/home/swho/jobxx" ]; then
     export PATH=/home/swho/bin:/home/swho/.local/bin:/home/perl/bin:/home/swho/dev-utils/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/swho/jobxx/bin:/home/swho/.fzf/bin:$PATH
 #My binaries 
 else 
-    export PATH="$PATH:/home/sorenwh/.sorenbin/bin"
-    export PYTHONPATH="${PYTHONPATH}:/home/sorenwh/Nextcloud/semester4/reinforcement/opg/02465students"
-
     #Anaconda settings
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!

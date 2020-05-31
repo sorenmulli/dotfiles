@@ -81,7 +81,7 @@ let perl_sub_signatures=1
 
 let g:neomake_python_pylint_maker = {
   \ 'args': [
-  \ '-d', 'C0103, C0111, E302, W191, E223, E117, E501, E202, mixed-indentation, trailing-whitespace, line-too-long, bad-whitespace, bad-continuation, too-many-instance-attributes, too-many-arguments, too-many-locals, multiple-statements, len-as-condition',
+  \ '-d', 'C0103, C0111, E302, W191, E223, E117, E501, E202, mixed-indentation, trailing-whitespace, line-too-long, bad-whitespace, bad-continuation, too-many-instance-attributes, too-many-arguments, too-many-locals, multiple-statements, len-as-condition, redefined-outer-name',
   \ '-f', 'text',
   \ '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg}"',
   \ '-r', 'n'

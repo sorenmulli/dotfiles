@@ -18,7 +18,7 @@ alias meme="cd /home/sorenwh"
 alias p="cd /home/sorenwh/Nextcloud/semester4/fagprojekt/projekt"
 
 
-alias maple="/home/sorenwh/maple2019/bin/maple"
+alias maple="/home/sorenwh/maple2020/bin/maple"
 
 alias vimgchange='vim -p $(git ls-files -o -m --exclude-standard)'
 alias pulldiff="git diff master@{1} master"
