@@ -23,8 +23,6 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-
 " NeoMake (håndterer bl.a. linting)
 Plug 'neomake/neomake'
 
-" file system integration
-Plug 'francoiscabrol/ranger.vim'
 
 " More colors
 Plug 'rafi/awesome-vim-colorschemes'
@@ -44,6 +42,9 @@ if isdirectory(expand("/home/sorenwh"))
 
   " Python completion
   Plug 'Valloric/YouCompleteMe'
+
+  " file system integration
+  Plug 'francoiscabrol/ranger.vim'
 else
   " vim-test - lader dig køre perl-tests inde fra din editor
   Plug 'janko-m/vim-test'
