@@ -14,9 +14,6 @@ Plug 'tpope/vim-fugitive'
 " Using quoting
 Plug 'tpope/vim-surround'
 
-" Follow file indent
-Plug 'xeyownt/vim-sleuth'
-
 " Bedre perl-highlighting
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
 
@@ -35,7 +32,7 @@ Plug 'Konfekt/FastFold'
 " Snippets
 Plug 'sirver/UltiSnips'
 
-" Modules loaded dependant on whether on job or not
+" Modules loaded dependant on whether on local or not
 if isdirectory(expand("/home/sorenwh"))
   "LaTeX
   Plug 'lervag/vimtex'
@@ -64,20 +61,18 @@ let maplocalleader = '.'
 "
 " vim-perl configuration {{{ 
 
-" highlight advanced perl vars inside strings                                                                                                                                                               
-let perl_extended_vars=1                                                                                                                                                               
+" highlight advanced perl vars inside string
+let perl_extended_vars=1
 
-" do highlighting on POD comments                                                                                                                                                               
-let perl_include_pod=1                                                                                                                                                               
+" do highlighting on POD comments 
+let perl_include_pod=1 
 
-" increase number of lines used when syntax highlighting                                                                                                                                                               
-let perl_sync_dist=1000                                                                                                                                                               
-autocmd BufEnter * :syntax sync minlines=300  
+" increase number of lines used when syntax 
+let perl_sync_dist=1000                                                                                                                                           
+autocmd BufEnter * :syntax sync minlines=300
 
-" allow subroutine signatures                                                                                                                                                               
-let perl_sub_signatures=1    
-
-
+" allow subroutine signatures                                                                                                                                                 
+let perl_sub_signatures=1 
 " }}} 
 
 let g:neomake_python_pylint_maker = {
@@ -116,6 +111,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_server_python_interpreter = '/home/sorenwh/anaconda3/bin/python'
 let g:ranger_replace_netrw = 1
 let g:SimpylFold_docstring_preview=1
+
 "ULTISNIPS
 " Trigger configuration.
 let g:UltiSnipsExpandTrigger="<c-space>"
@@ -127,12 +123,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="tabdo"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/dotfiles/vim/mysnips']
 
-" Personal settings
-let g:snips_author="Søren Winkel Holm"
-let g:snips_email="swholm@protonmail.com"
-let g:snips_github="github.com/sorenmulli"
-
-
 set history=500
 
 " Always show the status line
@@ -143,7 +133,6 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 
 " Enable filetype plugins
 filetype plugin on
-filetype indent on
 
 
 " Set to auto read when a file is changed from the outside
@@ -217,13 +206,13 @@ set mouse=a
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-"Settings dependant on jobxx develop machine or not
+"Settings dependant on being locally or not 
 if isdirectory(expand("/home/sorenwh"))
-  set noexpandtab
-  set softtabstop=0
+  " set noexpandtab
+  " set softtabstop=0
   call neomake#configure#automake('nrwi', 500)
-else
-  set expandtab
+" else
+  " set expandtab
 endif
 
 " Run checktime in buffers, but avoiding the "Command Line" (q:) window
@@ -341,12 +330,15 @@ nnoremap <S-Tab> <lt><lt>
 vnoremap <Tab> >
 vnoremap <S-Tab> <lt>
 
-
-set shiftwidth=4
+" Handle indentation
 set autoindent
 set shiftround
-set tabstop=4
-let g:SleuthDefaultWidth = "4"
+
+set shiftwidth=4
+set softtabstop=4
+
+set expandtab
+autocmd FileType python setlocal tabstop=4 noexpandtab
 
 
  " Commenting blocks of code.

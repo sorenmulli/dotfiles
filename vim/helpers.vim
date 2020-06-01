@@ -26,7 +26,7 @@ fun! OpenModuleUnderCursor()
   set iskeyword+=:
   let currentIdent = expand('<cword>')
   set iskeyword-=:
-  e `=system("perlopen -f " . currentIdent)`
+  tabedit `=system("perlopen -f " . currentIdent)`
 endfun
 
 fun! CleanExtraSpaces()
@@ -67,6 +67,7 @@ let s:comment_map = {
     \   "ahk": ';',
     \   "vim": '"',
     \   "tex": '%',
+    \   "html.ep": '#',
     \ }
 
 function! ToggleComment()
