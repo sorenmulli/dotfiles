@@ -117,6 +117,7 @@ setopt PUSHDMINUS
 zle -N my-accept-line
 # rebind Enter, usually this is `^M'
 bindkey '^M' my-accept-line
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(my-accept-line)
 
 #Plugins
 source ~/dotfiles/zsh/.zsh_plugins.sh
