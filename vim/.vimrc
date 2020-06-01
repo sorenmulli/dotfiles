@@ -187,6 +187,11 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" change cursor shape
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
 " Enable syntax highlighting
 syntax enable 
 
