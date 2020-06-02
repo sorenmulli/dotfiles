@@ -193,8 +193,15 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
+" Highligt
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
@@ -264,7 +271,7 @@ let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+" Map <Space> to / (search)
 map <space> /
 
 " Visual mode pressing * or # searches for the current selection
@@ -277,7 +284,7 @@ map <silent> <leader><cr> :noh<cr>
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-map <leader>tc :tabedit .
+map <leader>tw :tabedit .
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
@@ -320,7 +327,7 @@ noremap <leader>d "+d
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-" :W sudo saves the file 
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
@@ -347,7 +354,6 @@ set softtabstop=4
 
 set expandtab
 autocmd FileType python setlocal tabstop=4 noexpandtab
-
 
  " Commenting blocks of code.
 noremap <leader><Space> :call ToggleComment()<cr>
