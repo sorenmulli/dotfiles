@@ -239,7 +239,7 @@ map <leader>t<leader> :tabnext
 
 "go to definition
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-"
+
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
@@ -248,6 +248,9 @@ map <leader>ba :bufdo bd<cr>
 
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
+
+" Quickly open a buffer for scribble
+map <leader>bn :tabedit ~/buffer<cr>
 
 " Specify the behavior when switching between buffers 
 try
@@ -274,7 +277,7 @@ map <silent> <leader><cr> :noh<cr>
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-
+map <leader>tc :tabedit .
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
