@@ -96,6 +96,7 @@ export MYVIMRC="~/dotfiles/vim/.vimrc"
 
 #Python stuff
 export PYTHONBREAKPOINT='ipdb.set_trace'
+export PYTHONPATH=$PYTHONPATH:$HOME/Nextcloud/semester4/fagprojekt/projekt
 
 #TeX stuff
 export TEXINPUTS='.:~/Nextcloud/Software/LaTeX/EndLosung:'
