@@ -45,7 +45,7 @@ if isdirectory(expand("/home/sorenwh"))
 else
   " vim-test - lader dig køre perl-tests inde fra din editor
   Plug 'janko-m/vim-test'
-  Plug '~/dev-utils/conf/vim' 
+  Plug '~/dev-utils/conf/vim'
 
   " Mojolicious syntax highlighting (vores web-framework):
   Plug 'yko/mojo.vim'
@@ -58,22 +58,18 @@ call plug#end()
 
 let mapleader = ","
 let maplocalleader = '.'
-"
-" vim-perl configuration {{{ 
 
+" vim-perl configuration {{{
 " highlight advanced perl vars inside string
 let perl_extended_vars=1
-
-" do highlighting on POD comments 
-let perl_include_pod=1 
-
-" increase number of lines used when syntax 
-let perl_sync_dist=1000                                                                                                                                           
+" do highlighting on POD comments
+let perl_include_pod=1
+" increase number of lines used when syntax
+let perl_sync_dist=1000
 autocmd BufEnter * :syntax sync minlines=300
-
-" allow subroutine signatures                                                                                                                                                 
-let perl_sub_signatures=1 
-" }}} 
+" allow subroutine signatures
+let perl_sub_signatures=1
+" }}}
 
 let g:neomake_python_pylint_maker = {
   \ 'args': [
@@ -113,7 +109,7 @@ endif
 set spelllang=en_gb,da
 set spellfile=~/dotfiles/vim/en.utf-8.add
 
-autocmd FileType tex set spell
+autocmd FileType tex,md set spell
 let g:tex_flavor = "latex"
 set conceallevel=2
 let g:tex_conceal="abdgm"
