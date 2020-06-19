@@ -107,6 +107,8 @@ endif
 
 set spelllang=en_gb,da
 set spellfile=~/dotfiles/vim/en.utf-8.add
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 autocmd FileType tex,md set spell
 let g:tex_flavor = "latex"
