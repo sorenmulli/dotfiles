@@ -94,7 +94,6 @@ nnoremap <F8> :Neomake<CR>
 
 "TeX stuff
 let g:vimtex_quickfix_latexlog = {'default' : 0}
-let g:vimtex_quickfix_autoclose_after_keystrokes = 2
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_fold_enabled = 1
     " Okular recommended settings
