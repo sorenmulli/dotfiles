@@ -89,8 +89,8 @@ Color=255,255,255
 Color=255,255,255
 
 [General]
-Blur=true
+Blur=false
 ColorRandomization=false
 Description=Hvid på sort
-Opacity=0.6
+Opacity=1
 Wallpaper=

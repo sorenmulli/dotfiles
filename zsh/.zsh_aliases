@@ -16,7 +16,7 @@ alias vimrc="vim ~/dotfiles/vim/.vimrc"
 alias programmering="cd /home/sorenwh/Nextcloud/Software/Programmering"
 alias meme="cd /home/sorenwh"
 alias lr="cd /home/sorenwh/Nextcloud/Software/Programmering/Python/librubiks"
-alias lr="cd /home/sorenwh/Nextcloud/Software/Programmering/Python"
+alias py="cd /home/sorenwh/Nextcloud/Software/Programmering/Python"
 
 
 alias maple="/home/sorenwh/maple2020/bin/maple"
