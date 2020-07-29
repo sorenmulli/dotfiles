@@ -20,6 +20,8 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-
 " NeoMake (håndterer bl.a. linting)
 Plug 'neomake/neomake'
 
+" Fuzzyfinding
+Plug 'junegunn/fzf'
 
 " More colors
 Plug 'rafi/awesome-vim-colorschemes'
@@ -169,23 +171,23 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -246,7 +248,7 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-" Control tabs 
+" Control tabs
 
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -270,7 +272,7 @@ map <leader>h :bprevious<cr>
 " Quickly open a buffer for scribble
 map <leader>bn :tabedit ~/buffer<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
@@ -285,6 +287,10 @@ au TabLeave * let g:lasttab = tabpagenr()
 " Map <Space> to / (search)
 map <space> /
 
+nnoremap ½ :call fzf#run({'source': 'git ls-files', 'sink': 'tabedit', 'down': '40%'})<CR>
+nnoremap § :call fzf#run({'source': 'find .', 'sink': 'tabedit', 'down': '40%'})<CR>
+nnoremap <leader>½ :call fzf#run({'source': 'find ~/', 'sink': 'tabedit', 'down': '40%'})<CR>
+
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
@@ -296,6 +302,7 @@ map <silent> <leader><cr> :noh<cr>
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 map <leader>tw :tabedit .
+
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
@@ -310,23 +317,26 @@ nnoremap gsv :so $MYVIMRC<CR>
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
+
 " Linebreak on 500 characters
 set lbr
 set tw=500
 set number
 set relativenumber
 
-set wrap "Wrap lines
+set wrap
+
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
 "Pop up colour
 hi Pmenu ctermbg=gray
-"
+
 "Folding colour
 hi Folded ctermbg=235
 hi FoldColumn ctermbg=235
 hi SignColumn ctermbg=235
+
 " Fast saving
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
@@ -341,10 +351,6 @@ map <leader>pp :setlocal paste!<cr>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-
-" nmap <leader>n :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>echo $MYFILE<CR>
-" nmap <leader>m :let $MYFILE=expand('%')<CR>:vertical :botright :terminal<CR>python $MYFILE<CR>
-
 
 nnoremap o o<Esc>
 nnoremap O O<Esc>
