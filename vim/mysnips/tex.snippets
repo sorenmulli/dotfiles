@@ -116,19 +116,19 @@ snippet tab "tabular (or arbitrary) environment"
 endsnippet 
 
 # Align
-snippet ali "Align"
+snippet alil "Align"
 \\begin{align}
 	\\label{eq:${1}}
-	${0:${VISUAL}}
+	& ${0:${VISUAL}}
 \\end{align}
 endsnippet 
 
 # Align
-snippet "ali*" "Align*"
-\\begin{align*}}
-	${0:${VISUAL}}
+snippet ali "Align*"
+\\begin{align*}
+	& ${0:${VISUAL}}
 \\end{align*}
-endsnippet 
+endsnippet
 
 # Equation
 snippet eq "equation environment"
@@ -398,17 +398,17 @@ snippet subfig "subfigure environment"
 	\\label{fig:${5}}
 \\end{subfigure}
 ${0}
-endsnippet 
+endsnippet
 #math
 snippet frac "\frac{}{}"
 \\frac{${1:num}}{${2:denom}} ${0}
-endsnippet 
+endsnippet
 snippet sum "\sum^{}_{}"
 \\sum^{${1:n}}_{${2:i=1}} ${0}
-endsnippet 
+endsnippet
 snippet lim "\lim_{}"
 \\lim_{${1:n \\to \\infty}} ${0}
-endsnippet 
+endsnippet
 snippet col2 "two-column environment"
 \\begin{columns}
 	\\begin{column}{0.5\\textwidth}
@@ -418,70 +418,70 @@ snippet col2 "two-column environment"
 		${0}
 	\\end{column}
 \\end{columns}
-endsnippet 
+endsnippet
 snippet multicol2 "two-column environment with multicol"
 \\begin{multicols}{2}
 	${1}
 	\columnbreak
 	${0}
 \\end{multicols}
-endsnippet 
+endsnippet
 
 snippet \{ "\{ \}"
 \\{ ${0} \\}
-endsnippet 
+endsnippet
 
 #delimiter
 snippet lr "left right"
 \\left${1} ${0:${VISUAL}} \\right$1
-endsnippet 
+endsnippet
 
 snippet lr( "left( right)"
 \\left( ${0:${VISUAL}} \\right)
-endsnippet 
+endsnippet
 
 snippet lr| "left| right|"
 \\left| ${0:${VISUAL}} \\right|
-endsnippet 
+endsnippet
 
 snippet lr{ "left\{ right\}"
 \\left\\{ ${0:${VISUAL}} \\right\\}
-endsnippet 
+endsnippet
 
 snippet lr[ "left[ right]"
 \\left[ ${0:${VISUAL}} \\right]
-endsnippet 
+endsnippet
 
 snippet lra "langle rangle"
 \\langle ${0:${VISUAL}} \\rangle
-endsnippet 
+endsnippet
 
 # Code listings
 snippet lst
 \\begin{listing}[language=${1:language}]
 	${0:${VISUAL}}
 \\end{listing}
-endsnippet 
+endsnippet
 
 snippet lsi
 \\lstinline|${1}| ${0}
-endsnippet 
+endsnippet
 
 # Hyperlinks
 snippet url
 \\url{${1}} ${0}
-endsnippet 
+endsnippet
 
 snippet href
 \\href{${1}}{${2}} ${0}
-endsnippet 
+endsnippet
 # URL from Clipboard.
 
 snippet urlc
 \\url{`@+`} ${0}
-endsnippet 
+endsnippet
 
 snippet hrefc
 \\href{`@+`}{${1}} ${0}
-endsnippet 
+endsnippet
 
