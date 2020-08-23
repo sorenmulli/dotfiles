@@ -13,7 +13,7 @@ promptinit
 # End of lines added by compinstall
 
 #
-# Copied from bashrc 
+# Copied from bashrc
 #
 
 #Don't do anything in non-interactive
@@ -24,8 +24,8 @@ promptinit
 
 if [ -d "/home/swho/jobxx" ]; then
     export PATH=/home/swho/bin:/home/swho/.local/bin:/home/perl/bin:/home/swho/dev-utils/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/swho/jobxx/bin:/home/swho/.fzf/bin:$PATH
-#My binaries 
-else 
+#My binaries
+else
     #Anaconda settings
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
@@ -127,5 +127,5 @@ source ~/dotfiles/zsh/.zsh_plugins.sh
 source ~/dotfiles/zsh/myfuncs
 
 #Quick access to school subjects
-cdpath=$HOME/Nextcloud/semester4
+cdpath=$HOME/Nextcloud/semester5
 
