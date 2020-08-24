@@ -110,7 +110,7 @@ set spellfile=~/dotfiles/vim/en.utf-8.add
 hi clear SpellBad
 hi SpellBad cterm=underline
 
-autocmd FileType tex,md set spell
+autocmd FileType tex,md,gitcommit set spell
 let g:tex_flavor = "latex"
 set conceallevel=2
 let g:tex_conceal="abdgm"
