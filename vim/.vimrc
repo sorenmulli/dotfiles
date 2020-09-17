@@ -349,9 +349,6 @@ map <leader>pp :setlocal paste!<cr>
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-nnoremap o o<Esc>
-nnoremap O O<Esc>
-
 " Easy indentation
 inoremap <S-Tab> <C-O><lt><lt>
 nnoremap <Tab> >>
@@ -367,7 +364,6 @@ set shiftwidth=4
 set softtabstop=4
 
 set expandtab
-autocmd FileType python setlocal tabstop=4 noexpandtab
 
  " Commenting blocks of code.
 noremap <leader><Space> :call ToggleComment()<cr>
