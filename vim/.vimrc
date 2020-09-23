@@ -228,12 +228,15 @@ set mouse=a
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-"Settings dependant on being locally or not 
+"Settings dependant on being locally or not
+
 if isdirectory(expand("/home/sorenwh"))
   " set noexpandtab
   " set softtabstop=0
   call neomake#configure#automake('nrwi', 500)
-" else
+else
+  set backupdir=~/.vim/swap
+  set directory=~/.vim/swap
   " set expandtab
 endif
 
