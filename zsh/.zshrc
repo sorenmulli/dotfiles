@@ -66,6 +66,7 @@ my-accept-line () {
 #History
 HISTFILE=~/dotfiles/zsh/.histfile
 PROMPT_COMMAND='history -a'
+
 setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
@@ -96,7 +97,7 @@ export MYVIMRC="~/dotfiles/vim/.vimrc"
 
 #Python stuff
 export PYTHONBREAKPOINT='ipdb.set_trace'
-export PYTHONPATH=$PYTHONPATH:$HOME/Nextcloud/semester4/fagprojekt/projekt
+export PYTHONPATH=$PYTHONPATH:~/Nextcloud/maijo/main
 
 #TeX stuff
 export TEXINPUTS='.:~/Nextcloud/Software/LaTeX/EndLosung:'

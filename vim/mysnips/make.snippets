@@ -1,0 +1,10 @@
+snippet make "Standard make"
+cc=gcc
+CFLAGS=-Wall -std=c99
+LDLIBS=-lm
+
+all: ${1:file}
+
+$1:
+
+endsnippet

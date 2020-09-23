@@ -11,7 +11,7 @@ import torch.nn as nn
 import matplotlib.pyplot as plt
 
 import pandas as pd
-import seaborn as sb
+import seaborn as sns
 
 endsnippet
 
@@ -20,8 +20,12 @@ snippet rest "Docstring in rest format"
 
 :param ${2:type param}:  ${3:Argument}
 :return: ${4:Answer}
-:rtype: ${5:bool}
 """
+endsnippet
+
+snippet printf
+print(f"${1:x} = {${2:$1}}")
+${0:${VISUAL}}
 endsnippet
 
 ############## EVERYTHING BELOW THIS LINE COPIED FROM https://github.com/honza/vim-snippets
@@ -30,6 +34,7 @@ snippet #!
 #!/usr/bin/env python3
 
 endsnippet
+
 snippet imp
 import ${0:module}
 
@@ -40,21 +45,9 @@ from ${1:package} import ${0:module}
 
 endsnippet
 
-# Module Docstring
-snippet docs
-"""
-File: ${1:`!p snips.rv = snip.fn`}
-:Version: 1
-:Authors: 
-	-`g:snips_author`, `g:snips_email`
-:Github: `g:snips_github`
-:Description: ${0}
-"""
-endsnippet
-
 
 snippet wh
-while ${1:condition}:
+while ${1:True}:
 	${0:${VISUAL}}
 endsnippet
 
@@ -87,9 +80,8 @@ class ${1:class_name}:
 endsnippet
 
 # New Function
-
 snippet def
-def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+def ${1:main}(${3:`indent('.') ? 'self' : ''`}) -> ${2:int}:
 	${0}
 endsnippet
 

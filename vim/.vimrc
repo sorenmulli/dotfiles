@@ -71,6 +71,7 @@ autocmd BufEnter * :syntax sync minlines=300
 let perl_sub_signatures=1
 " }}}
 
+
 let g:neomake_python_pylint_maker = {
   \ 'args': [
   \ '-d', 'C0103, C0111, E302, W191, E223, E117, E501, E202, mixed-indentation, trailing-whitespace, line-too-long, bad-whitespace, bad-continuation, too-many-instance-attributes, too-many-arguments, too-many-locals, multiple-statements, len-as-condition, redefined-outer-name',
@@ -212,10 +213,8 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
+
+set t_Co=256
 
 set background=dark
 
@@ -337,6 +336,10 @@ hi Folded ctermbg=235
 hi FoldColumn ctermbg=235
 hi SignColumn ctermbg=235
 
+"Insert newlines quickly
+nmap <leader>O O<Esc>j
+nmap <leader>o o<Esc>k
+
 " Fast saving
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
@@ -351,9 +354,6 @@ map <leader>pp :setlocal paste!<cr>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-
-nnoremap o o<Esc>
-nnoremap O O<Esc>
 
 " Easy indentation
 inoremap <S-Tab> <C-O><lt><lt>
@@ -370,10 +370,12 @@ set shiftwidth=4
 set softtabstop=4
 
 set expandtab
-autocmd FileType python setlocal tabstop=4 noexpandtab
 
  " Commenting blocks of code.
 noremap <leader><Space> :call ToggleComment()<cr>
 vnoremap <leader><Space> :call ToggleComment()<cr>
 
+
+" Colours
+colorscheme molokayo
 
