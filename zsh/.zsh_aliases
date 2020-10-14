@@ -17,6 +17,6 @@ alias prog="cd /home/sorenwh/Nextcloud/Software/Programmering"
 alias meme="cd /home/sorenwh"
 alias maple="/home/sorenwh/maple2020/bin/maple"
 
-alias vimgchange='vim -p $(git ls-files -o -m --exclude-standard)'
+alias vimgchange='nvim -p $(git ls-files -o -m --exclude-standard)'
 
 alias ugenr="curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)'"

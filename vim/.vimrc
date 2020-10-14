@@ -1,59 +1,53 @@
- " Install vim-plug if it isn't already installed
+" Neovim should be able to read vim plugins
+if has('nvim')
+    set runtimepath^=~/.vim runtimepath+=~/.vim/after
+    let &packpath = &runtimepath
+endif
+
+" Install vim-plug if it isn't already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-
 endif
 
 call plug#begin('~/.vim/plugged')
-
 " Git support
 Plug 'tpope/vim-fugitive'
-
 " Using quoting
 Plug 'tpope/vim-surround'
-
+Plug 'tpope/vim-commentary'
 " Bedre perl-highlighting
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
-
 " NeoMake (håndterer bl.a. linting)
 Plug 'neomake/neomake'
-
 " Fuzzyfinding
 Plug 'junegunn/fzf'
-
 " More colors
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-python/python-syntax'
-
 " Python folding
 Plug 'tmhedberg/SimpylFold'
 Plug 'Konfekt/FastFold'
-
 " Snippets
 Plug 'sirver/UltiSnips'
-
+Plug 'christoomey/vim-conflicted'
 " Modules loaded dependant on whether on local or not
 if isdirectory(expand("/home/sorenwh"))
   "LaTeX
   Plug 'lervag/vimtex'
-
   " Python completion
   Plug 'Valloric/YouCompleteMe'
-
 else
   " vim-test - lader dig køre perl-tests inde fra din editor
   Plug 'janko-m/vim-test'
   Plug '~/dev-utils/conf/vim'
-
   " Mojolicious syntax highlighting (vores web-framework):
   Plug 'yko/mojo.vim'
-
-  " LESS syntax highlighting
-  Plug 'groenewege/vim-less'
+  Plug 'pangloss/vim-javascript'
+  Plug 'posva/vim-vue'
+  Plug 'editorconfig/editorconfig-vim'
 endif
-
 call plug#end()
 
 let mapleader = ","
@@ -70,7 +64,6 @@ autocmd BufEnter * :syntax sync minlines=300
 " allow subroutine signatures
 let perl_sub_signatures=1
 " }}}
-
 
 let g:neomake_python_pylint_maker = {
   \ 'args': [
@@ -198,13 +191,13 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-" change cursor shape
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+" Colours
+colorscheme molokayo
 
 " Enable syntax highlighting
 syntax enable
+
+
 
 " Highligt
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -229,7 +222,7 @@ set ffs=unix,dos,mac
 
 "Settings dependant on being locally or not
 
-if isdirectory(expand("/home/sorenwh"))
+if isdirectory(expand("/home/sorenwh")) || has('nvim') 
   " set noexpandtab
   " set softtabstop=0
   call neomake#configure#automake('nrwi', 500)
@@ -371,11 +364,7 @@ set softtabstop=4
 
 set expandtab
 
- " Commenting blocks of code.
-noremap <leader><Space> :call ToggleComment()<cr>
-vnoremap <leader><Space> :call ToggleComment()<cr>
-
-
-" Colours
-colorscheme molokayo
-
+set guicursor+=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
