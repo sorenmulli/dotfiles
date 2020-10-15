@@ -330,8 +330,8 @@ hi FoldColumn ctermbg=235
 hi SignColumn ctermbg=235
 
 "Insert newlines quickly
-nmap <leader>O O<Esc>j
-nmap <leader>o o<Esc>k
+nmap <leader>O O<Esc>
+nmap <leader>o o<Esc>
 
 " Fast saving
 nmap <leader>w :w!<cr>
