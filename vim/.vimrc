@@ -12,27 +12,27 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-" Git support
-Plug 'tpope/vim-fugitive'
-" Using quoting
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-" Bedre perl-highlighting
-Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
-" NeoMake (håndterer bl.a. linting)
-Plug 'neomake/neomake'
-" Fuzzyfinding
-Plug 'junegunn/fzf'
-" More colors
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'vim-python/python-syntax'
-" Python folding
-Plug 'tmhedberg/SimpylFold'
-Plug 'Konfekt/FastFold'
-" Snippets
-Plug 'sirver/UltiSnips'
-Plug 'christoomey/vim-conflicted'
-" Modules loaded dependant on whether on local or not
+  " Git support
+  Plug 'tpope/vim-fugitive'
+  " Using quoting
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-commentary'
+  " Bedre perl-highlighting
+  Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
+  " NeoMake (håndterer bl.a. linting)
+  Plug 'neomake/neomake'
+  " Fuzzyfinding
+  Plug 'junegunn/fzf'
+  " More colors
+  Plug 'rafi/awesome-vim-colorschemes'
+  Plug 'vim-python/python-syntax'
+  " Python folding
+  Plug 'tmhedberg/SimpylFold'
+  Plug 'Konfekt/FastFold'
+  " Snippets
+  Plug 'sirver/UltiSnips'
+  Plug 'christoomey/vim-conflicted'
+  " Modules loaded dependant on whether on local or not
 if isdirectory(expand("/home/sorenwh"))
   "LaTeX
   Plug 'lervag/vimtex'
@@ -158,7 +158,6 @@ set hid
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-
 " Ignore case when searching
 set ignorecase
 
@@ -179,6 +178,7 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -197,15 +197,9 @@ colorscheme molokayo
 " Enable syntax highlighting
 syntax enable
 
-
-
-" Highligt
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+" Highlight trailing whitespaces
+set list
+set listchars=trail:~,tab:>-,nbsp:␣
 
 set t_Co=256
 
@@ -221,16 +215,17 @@ set mouse=a
 set ffs=unix,dos,mac
 
 "Settings dependant on being locally or not
-
 if isdirectory(expand("/home/sorenwh")) || has('nvim') 
   " set noexpandtab
   " set softtabstop=0
   call neomake#configure#automake('nrwi', 500)
 else
-  set backupdir=~/.vim/swap
-  set directory=~/.vim/swap
   " set expandtab
 endif
+
+" Don't save in same folder; annoys git
+set backupdir=~/.vim/swap
+set directory=~/.vim/swap
 
 " Run checktime in buffers, but avoiding the "Command Line" (q:) window
 au CursorHold * if getcmdwintype() == '' | checktime | endif
@@ -240,14 +235,13 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-" Control tabs
 
+" Control tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
-
 
 "go to definition
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -368,3 +362,4 @@ set guicursor+=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+

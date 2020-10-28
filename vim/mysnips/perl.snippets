@@ -1,0 +1,22 @@
+snippet warn "use Data::Dumper;JIX::Log->warn("
+use Data::Dumper;
+JIX::Log->warn(Dumper ${0});
+
+endsnippet
+
+snippet sub "create sub"
+=head2 $1
+
+=cut
+
+sub ${1} ($self) {
+    ${0}
+}
+
+endsnippet
+
+snippet for "for loop"
+for my $${3:cur} (${1:@list}) {
+	${0}
+}
+endsnippet
