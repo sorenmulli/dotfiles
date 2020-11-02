@@ -7,16 +7,17 @@ alias n="cd /home/sorenwh/Nextcloud"
 
 alias ls="ls --color=auto"
 
-alias zshrc="vim ~/dotfiles/zsh/.zshrc"
-alias zshplug="vim ~/dotfiles/zsh/.zsh_plugins.txt"
-alias zshalias="vim ~/dotfiles/zsh/.zsh_aliases"
+alias zshrc="nvim ~/dotfiles/zsh/.zshrc"
+alias zshplug="nvim ~/dotfiles/zsh/.zsh_plugins.txt"
+alias zshalias="nvim ~/dotfiles/zsh/.zsh_aliases"
 alias antiplug="antibody bundle < ~/dotfiles/zsh/.zsh_plugins.txt > ~/dotfiles/zsh/.zsh_plugins.sh"
-alias vimrc="vim ~/dotfiles/vim/.vimrc"
 alias nv="nvim ."
+alias vimrc="nvim ~/dotfiles/vim/.vimrc"
 
 alias prog="cd /home/sorenwh/Nextcloud/Software/Programmering"
 alias meme="cd /home/sorenwh"
 alias maple="/home/sorenwh/maple2020/bin/maple"
+alias imaple="/home/sorenwh/installs/maple2020/bin/maple"
 
 alias vimgchange='nvim -p $(git ls-files -o -m --exclude-standard)'
 

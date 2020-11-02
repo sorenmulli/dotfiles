@@ -90,7 +90,7 @@ if [ -f ~/dotfiles/zsh/.zsh_aliases ];then
 fi
 
 #Vim stuff
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export VIMINIT='source $MYVIMRC'
 export MYVIMRC="~/dotfiles/vim/.vimrc"
