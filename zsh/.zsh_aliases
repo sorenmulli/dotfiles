@@ -1,23 +1,30 @@
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
-alias more=less
-alias n="cd /home/sorenwh/Nextcloud"
+# Install zsh plugins
+alias zinstall="antibody bundle < ~/dotfiles/zsh/.zsh_plugins.txt > ~/dotfiles/zsh/.zsh_plugins.sh"
 
-alias ls="ls --color=auto"
+# Standard programs
+alias \
+    cp="cp -iv" \
+    mv="mv -iv" \
+    rm="rm -vI" \
+    mkd="mkdir -pv" \
+    ls="ls --color=auto"
 
-alias zshrc="vim ~/dotfiles/zsh/.zshrc"
-alias zshplug="vim ~/dotfiles/zsh/.zsh_plugins.txt"
-alias zshalias="vim ~/dotfiles/zsh/.zsh_aliases"
-alias antiplug="antibody bundle < ~/dotfiles/zsh/.zsh_plugins.txt > ~/dotfiles/zsh/.zsh_plugins.sh"
-alias vimrc="vim ~/dotfiles/vim/.vimrc"
-alias nv="nvim ."
+# Config
+alias \
+     zrc="$EDITOr ~/dotfiles/zsh/.zshrc"\
+     zplug="$EDITOR ~/dotfiles/zsh/.zsh_plugins.txt"\
+     zalias="$EDITOR ~/dotfiles/zsh/.zsh_aliases"\
+     vimrc="$EDITOR ~/dotfiles/vim/.vimrc"
 
-alias prog="cd /home/sorenwh/Nextcloud/Software/Programmering"
-alias meme="cd /home/sorenwh"
-alias maple="/home/sorenwh/maple2020/bin/maple"
+# Paths
+alias \
+    n="cd /home/sorenwh/Nextcloud"\
+    prog="cd /home/sorenwh/Nextcloud/Software/Programmering"
 
-alias vimgchange='nvim -p $(git ls-files -o -m --exclude-standard)'
+# Useful programs and shorthands
+alias \
+    nv="$EDITOR ."
 
-alias ugenr="curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)'"
+uge()       {curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)';}
+vgdiff()    {nvim -p $(git ls-files -o -m --exclude-standard);}
+nf()        { fzf | xargs -r -I % $EDITOR %; }

@@ -26,6 +26,7 @@ if [ -d "/home/swho/jobxx" ]; then
     export PATH=/home/swho/bin:/home/swho/.local/bin:/home/perl/bin:/home/swho/dev-utils/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/swho/jobxx/bin:/home/swho/.fzf/bin:$PATH
 #My binaries
 else
+    export PATH="/home/sorenwh/maple2020/bin:/home/sorenwh/installs/maple2020/bin:$PATH"
     #Anaconda settings
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
@@ -61,7 +62,19 @@ my-accept-line () {
     # in any case run the `accept-line' widget
     zle accept-line
 }
-
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
 
 #History
 HISTFILE=~/dotfiles/zsh/.histfile
@@ -90,14 +103,16 @@ if [ -f ~/dotfiles/zsh/.zsh_aliases ];then
 fi
 
 #Vim stuff
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export VIMINIT='source $MYVIMRC'
 export MYVIMRC="~/dotfiles/vim/.vimrc"
+     zpluginstall="antibody bundle < ~/dotfiles/zsh/.zsh_plugins.txt > ~/dotfiles/zsh/.zsh_plugins.sh"\
 
 #Python stuff
 export PYTHONBREAKPOINT='ipdb.set_trace'
 export PYTHONPATH=$PYTHONPATH:~/Nextcloud/maijo/main
+
 #TeX stuff
 export TEXINPUTS='.:~/Nextcloud/Software/LaTeX/EndLosung:'
 

@@ -315,9 +315,6 @@ set wrap
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-"Pop up colour
-hi Pmenu ctermbg=gray
-
 "Folding colour
 hi Folded ctermbg=235
 hi FoldColumn ctermbg=235
