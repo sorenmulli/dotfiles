@@ -11,10 +11,10 @@ alias \
 
 # Config
 alias \
-     zrc="$EDITOr ~/dotfiles/zsh/.zshrc"\
-     zplug="$EDITOR ~/dotfiles/zsh/.zsh_plugins.txt"\
-     zalias="$EDITOR ~/dotfiles/zsh/.zsh_aliases"\
-     vimrc="$EDITOR ~/dotfiles/vim/.vimrc"
+     zrc='$EDITOR ~/dotfiles/zsh/.zshrc'\
+     zplug='$EDITOR ~/dotfiles/zsh/.zsh_plugins.txt'\
+     zalias='$EDITOR ~/dotfiles/zsh/.zsh_aliases'\
+     vimrc='$EDITOR ~/dotfiles/vim/.vimrc'
 
 # Paths
 alias \
@@ -23,7 +23,7 @@ alias \
 
 # Useful programs and shorthands
 alias \
-    nv="$EDITOR ."
+    nv='$EDITOR .'
 
 uge()       {curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)';}
 vgdiff()    {nvim -p $(git ls-files -o -m --exclude-standard);}
