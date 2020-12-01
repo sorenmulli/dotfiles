@@ -24,14 +24,13 @@ Run `antiplug` for plugin install.
 
 ### VIM
 
-Install `gvim` or `vim-gtk3` from package man.
-
-Set terminal to solarized.
+Install `neovim` and `xsel` from package man.
 
 Run `:PlugInstall` for plugin install.
 
 ### konsole
 `ln -s ~/dotfiles/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme`
+
 `ln -s ~/dotfiles/konsole/Shell.profile ~/.local/share/konsole/Shell.profile`
 
 ### ranger
