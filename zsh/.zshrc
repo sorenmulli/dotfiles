@@ -26,7 +26,8 @@ if [ -d "/home/swho/jobxx" ]; then
     export PATH=/home/swho/bin:/home/swho/.local/bin:/home/perl/bin:/home/swho/dev-utils/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/swho/jobxx/bin:/home/swho/.fzf/bin:$PATH
 #My binaries
 else
-    export PATH="/home/sorenwh/maple2020/bin:/home/sorenwh/installs/maple2020/bin:$PATH"
+    export PATH="/home/sorenwh/.local/bin:/home/sorenwh/maple2020/bin:/home/sorenwh/installs/maple2020/bin:$PATH"
+    source .venv/bin/activate
     #Anaconda settings
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!

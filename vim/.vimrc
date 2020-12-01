@@ -119,7 +119,7 @@ let g:python_highlight_all = 1
 let g:python_highlight_indent_errors  = 0
 
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_server_python_interpreter = '/home/sorenwh/anaconda3/bin/python'
+" let g:ycm_server_python_interpreter = '/home/sorenwh/anaconda3/bin/python'
 let g:SimpylFold_docstring_preview=1
 
 "ULTISNIPS
