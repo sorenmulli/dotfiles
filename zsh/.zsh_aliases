@@ -18,8 +18,8 @@ alias \
 
 # Paths
 alias \
-    n="cd /home/sorenwh/Nextcloud"\
-    prog="cd /home/sorenwh/Nextcloud/Software/Programmering"
+    n="cd $HOME/Nextcloud"\
+    prog="cd $HOME/Nextcloud/Software/Programmering"
 
 # Useful programs and shorthands
 alias \

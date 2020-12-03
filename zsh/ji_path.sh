@@ -1,0 +1,1 @@
+export PATH=/home/swho/bin:/home/swho/.local/bin:/home/perl/bin:/home/swho/dev-utils/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/swho/jobxx/bin:/home/swho/.fzf/bin:$PATH
