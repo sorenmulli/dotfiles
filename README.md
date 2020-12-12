@@ -26,18 +26,30 @@ Run `antiplug` for plugin install.
 Installation:
 `
 vpython="3.9.0"; mvpython="3.9"
+
 sudo pacman -S tk
+
 wget https://www.python.org/ftp/python/$vpython/Python-$vpython.tar.xz
+
 tar xf Python-$vpython.tar.xz
+
 cd Python-$vpython
-sudo ./configure --enable-optimizations
+
+sudo ./configure --enable-optimizations --enable-shared
+
 sudo make altinstall
+
+sudo ldconfig /usr/local/lib 
+
 /usr/local/bin/pip$mvpython install wheel virtualenv
+
 virtualenv --python=python$mvpython ~/.venv
+
 `
 Restart shell, then
 `
 pip install --upgrade pip
+
 pip install -r ~/dotfiles/python/requirements.txt
 `
 
@@ -47,6 +59,10 @@ Install `neovim` and `xsel` from package man.
 
 Run `:PlugInstall` for plugin install.
 Setup `YouCompleteMe` by 
+`
+cd ~/.vim/plugged/YouCompleteMe
+python install.py --clang-completer
+`
 
 ### konsole
 `ln -s ~/dotfiles/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme`
