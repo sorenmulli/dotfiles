@@ -15,4 +15,3 @@ coverage
 requests
 wget
 jupyter
-virtualenv
