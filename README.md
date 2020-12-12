@@ -22,11 +22,31 @@ then
 Reboot for `chsh` to take effect.
 Run `antiplug` for plugin install.
 
+### Python
+Installation:
+`
+vpython="3.9.0"; mvpython="3.9"
+sudo pacman -S tk
+wget https://www.python.org/ftp/python/$vpython/Python-$vpython.tar.xz
+tar xf Python-$vpython.tar.xz
+cd Python-$vpython
+sudo ./configure --enable-optimizations
+sudo make altinstall
+/usr/local/bin/pip$mvpython install wheel virtualenv
+virtualenv --python=python$mvpython ~/.venv
+`
+Restart shell, then
+`
+pip install --upgrade pip
+pip install -r ~/dotfiles/python/requirements.txt
+`
+
 ### VIM
 
 Install `neovim` and `xsel` from package man.
 
 Run `:PlugInstall` for plugin install.
+Setup `YouCompleteMe` by 
 
 ### konsole
 `ln -s ~/dotfiles/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme`
