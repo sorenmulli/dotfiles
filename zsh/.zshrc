@@ -97,6 +97,8 @@ export MYVIMRC="$HOME/dotfiles/vim/.vimrc"
 #### PYTHON
 export PYTHONBREAKPOINT='ipdb.set_trace'
 export PYTHONPATH=$PYTHONPATH:~/Nextcloud/maijo/main
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib:/usr/local/lib
+
 # Python environment
 if [ -d "$HOME/.venv/" ]; then
     source $HOME/.venv/bin/activate

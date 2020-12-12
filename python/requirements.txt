@@ -4,6 +4,7 @@ opencv-python
 matplotlib
 scipy
 numpy
+pandas
 networkx
 scikit-learn
 pyperclip

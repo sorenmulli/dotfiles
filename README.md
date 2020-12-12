@@ -32,7 +32,6 @@ tar xf Python-$vpython.tar.xz
 cd Python-$vpython
 sudo ./configure --enable-optimizations --enable-shared
 sudo make altinstall
-sudo ldconfig /usr/local/lib 
 /usr/local/bin/pip$mvpython install wheel virtualenv
 virtualenv --python=python$mvpython ~/.venv
 ```
