@@ -1,0 +1,17 @@
+pillow
+imageio
+opencv-python
+matplotlib
+scipy
+numpy
+networkx
+scikit-learn
+pyperclip
+ipython
+ipdb
+pytest
+pylint
+coverage
+requests
+wget
+jupyter
