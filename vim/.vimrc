@@ -319,6 +319,9 @@ set relativenumber
 
 set wrap
 
+" Remap increment/decrement number as I use ctrl+A for tmux
+nnoremap <A-a> <C-a>
+nnoremap <A-x> <C-x>
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
