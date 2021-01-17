@@ -8,16 +8,10 @@ snippet up "\usepackage"
 \\usepackage[${1:options}]{${2:package}} ${0}
 endsnippet
 
-snippet nuc "\newunicodechar"
-\\newunicodechar{${1}}{${2:\\ensuremath}${3:tex-substitute}}} ${0}
-endsnippet
 
 snippet dmo "\DeclareMathOperator"
 \\DeclareMathOperator{${1}}{${2}} ${0}
 endsnippet
-
-
-
 
 snippet document "[english] Big document template"
 \documentclass[12pt,fleqn]{article}
@@ -34,15 +28,15 @@ snippet document "[english] Big document template"
 
 \fancypagestyle{plain}
 {
-	\fancyhf{}
-	\rfoot{Page \thepage{} of \pageref{LastPage}}
-	\renewcommand{\headrulewidth}{0pt}
+    \fancyhf{}
+    \rfoot{Page \thepage{} of \pageref{LastPage}}
+    \renewcommand{\headrulewidth}{0pt}
 }
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{$2}
 \chead{}
-\rhead{Techical University of Denmark}
+\rhead{Technical University of Denmark}
 \lfoot{$1}
 \rfoot{Page \thepage{} of \pageref{LastPage}}
 
@@ -75,9 +69,9 @@ snippet dadocument "[dansk] Big document template"
 
 \fancypagestyle{plain}
 {
-	\fancyhf{}
-	\rfoot{Page \thepage{} of \pageref{LastPage}}
-	\renewcommand{\headrulewidth}{0pt}
+    \fancyhf{}
+    \rfoot{Page \thepage{} of \pageref{LastPage}}
+    \renewcommand{\headrulewidth}{0pt}
 }
 \pagestyle{fancy}
 \fancyhf{}

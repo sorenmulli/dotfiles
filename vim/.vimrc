@@ -198,7 +198,7 @@ set tm=500
 set foldcolumn=1
 
 " Colours
-colorscheme molokayo
+colorscheme onedark
 
 " Enable syntax highlighting
 syntax enable
@@ -317,7 +317,8 @@ set tw=500
 set number
 set relativenumber
 
-set wrap
+" set wrap
+set nowrap
 
 " Remap increment/decrement number as I use ctrl+A for tmux
 nnoremap <A-a> <C-a>
