@@ -61,9 +61,14 @@ python install.py --clang-completer
 Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ### KDE and app visuals
-kwin tiling script + settings
+[kwin tiling script](https://github.com/kwin-scripts/kwin-tiling) + settings
 
 ### Key remap
+
+Actually works: 
+https://superuser.com/a/1239550
+
+-------------
 Run (for change of ESC and Caps Lock)
 
 This might work: 
@@ -83,5 +88,3 @@ Then make the following run on startup (either edit .desktop in autostart or add
 
 A last possibility is to run `speedswapper.sh` at startup.
 
-Actually works: 
-https://superuser.com/a/1239550
