@@ -20,7 +20,7 @@ then
 `chsh -s $(which zsh)`
 
 Reboot for `chsh` to take effect.
-Run `antiplug` for plugin install.
+Run `zinstall` for plugin install.
 
 ### Python
 Installation:
@@ -56,11 +56,6 @@ python install.py --clang-completer
 `ln -s ~/dotfiles/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme`
 
 `ln -s ~/dotfiles/konsole/Shell.profile ~/.local/share/konsole/Shell.profile`
-
-### ranger
-
-Install `ranger`, then create `~/.config/ranger/rc.conf` with content `source ~/dotfiles/ranger/rc.conf`
-Install `w3m` for image previews.
 
 ### tmux
 Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
