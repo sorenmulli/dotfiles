@@ -52,16 +52,20 @@ cd ~/.vim/plugged/YouCompleteMe
 python install.py --clang-completer
 `
 
-### konsole
-`ln -s ~/dotfiles/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme`
-
-`ln -s ~/dotfiles/konsole/Shell.profile ~/.local/share/konsole/Shell.profile`
-
 ### tmux
 Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ### KDE and app visuals
 [kwin tiling script](https://github.com/kwin-scripts/kwin-tiling) + settings
+
+Shortcuts: Change "Change one desktop up/down/left/right" to "Meta+Ctrl+K/J/H/L"
+and "Window one desktop up/down/left/right" to " "Alt+Shift+K/J/H/L"
+
+This is shaky:
+`ln -s ~/dotfiles/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme`
+
+`ln -s ~/dotfiles/konsole/Shell.profile ~/.local/share/konsole/Shell.profile`
+
 
 ### Key remap
 
