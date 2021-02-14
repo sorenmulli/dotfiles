@@ -231,8 +231,8 @@ else
 endif
 
 " Don't save in same folder; annoys git
-set backupdir=~/.vim/swap
-set directory=~/.vim/swap
+set backupdir=$HOME/.vim/swap
+set directory=$HOME/.vim/swap
 
 " Run checktime in buffers, but avoiding the "Command Line" (q:) window
 au CursorHold * if getcmdwintype() == '' | checktime | endif
@@ -367,7 +367,10 @@ set softtabstop=4
 set expandtab
 
 set guicursor+=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+
+if v:version > 704 || has("nvim")
+    let &t_SI = "\<Esc>[6 q"
+    let &t_SR = "\<Esc>[4 q"
+    let &t_EI = "\<Esc>[2 q"
+endif
 
