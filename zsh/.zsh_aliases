@@ -21,7 +21,7 @@ alias \
     n="cd $HOME/Nextcloud"\
     prog="cd $HOME/Nextcloud/Software/Programmering"\
     p="cd $HOME/Nextcloud/bach/projekt"\
-    c="cd $HOME/Nextcloud/bach/NERdk"
+    c="cd $HOME/Nextcloud/bach/daLUKE"
 
 
 # Useful programs and shorthands
