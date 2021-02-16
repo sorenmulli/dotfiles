@@ -96,7 +96,7 @@ export MYVIMRC="$HOME/dotfiles/vim/.vimrc"
 
 #### PYTHON
 export PYTHONBREAKPOINT='ipdb.set_trace'
-export PYTHONPATH=$PYTHONPATH:~/Nextcloud/maijo/main
+export PYTHONPATH=$PYTHONPATH:~/Nextcloud/absis/pyaccount
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib:/usr/local/lib
 
 # Python environment
