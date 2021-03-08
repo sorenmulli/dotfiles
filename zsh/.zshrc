@@ -99,10 +99,9 @@ export PYTHONBREAKPOINT='ipdb.set_trace'
 export PYTHONPATH=$PYTHONPATH:~/Nextcloud/absis/pyaccount
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib:/usr/local/lib
 
-# Python environment
-if [ -d "$HOME/.venv/" ]; then
-    source $HOME/.venv/bin/activate
-fi
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 #### TEX
 export TEXINPUTS='.:~/Nextcloud/Software/LaTeX/EndLosung:'
