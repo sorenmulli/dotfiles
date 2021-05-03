@@ -19,8 +19,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'
   " Bedre perl-highlighting
   Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
-  " NeoMake (håndterer bl.a. linting)
-  Plug 'neomake/neomake'
   " Fuzzyfinding
   Plug 'junegunn/fzf'
   " More colors
@@ -29,6 +27,8 @@ call plug#begin('~/.vim/plugged')
   " Python folding
   Plug 'tmhedberg/SimpylFold'
   Plug 'Konfekt/FastFold'
+  " Code completion
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Snippets
   Plug 'sirver/UltiSnips'
   Plug 'christoomey/vim-conflicted'
@@ -38,12 +38,9 @@ call plug#begin('~/.vim/plugged')
   else
     Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
   endif
-  " Modules loaded dependant on whether on local or not
 if isdirectory(expand("/home/sorenwh"))
   "LaTeX
   Plug 'lervag/vimtex'
-  " Python completion
-  Plug 'Valloric/YouCompleteMe'
 else
   " vim-test - lader dig køre perl-tests inde fra din editor
   Plug 'janko-m/vim-test'
@@ -71,26 +68,22 @@ autocmd BufEnter * :syntax sync minlines=300
 let perl_sub_signatures=1
 " }}}
 
-let g:neomake_python_pylint_maker = {
-  \ 'args': [
-  \ '-d', 'C0103, C0111, E302, W191, E223, E117, E501, E202, mixed-indentation, trailing-whitespace, line-too-long, bad-whitespace, bad-continuation, too-many-instance-attributes, too-many-arguments, too-many-locals, multiple-statements, len-as-condition, redefined-outer-name',
-  \ '-f', 'text',
-  \ '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg}"',
-  \ '-r', 'n'
-  \ ],
-  \ 'errorformat':
-  \ '%A%f:%l:%c:%t: %m,' .
-  \ '%A%f:%l: %m,' .
-  \ '%A%f:(%l): %m,' .
-  \ '%-Z%p^%.%#,' .
-  \ '%-G%.%#',
-  \ }
-let g:neomake_python_enabled_makers = ['pylint']
-
-source ~/dotfiles/vim/helpers.vim
+source $HOME/dotfiles/vim/helpers.vim
 
 nnoremap <F9> :call OpenModuleUnderCursor()<CR>
-nnoremap <F8> :Neomake<CR>
+
+" coc.nvim related settings
+source $HOME/dotfiles/vim/cocstuff.vim
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
 
 "TeX stuff
 let g:vimtex_quickfix_latexlog = {'default' : 0}
@@ -118,8 +111,6 @@ let g:tex_conceal="abdgm"
 let g:python_highlight_all = 1
 let g:python_highlight_indent_errors  = 0
 
-let g:ycm_autoclose_preview_window_after_completion=1
-" let g:ycm_server_python_interpreter = '/home/sorenwh/anaconda3/bin/python'
 let g:SimpylFold_docstring_preview=1
 
 "ULTISNIPS
@@ -155,7 +146,7 @@ set so=7
 set ruler
 
 " Height of the command bar
-set cmdheight=1
+set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -225,7 +216,6 @@ if isdirectory(expand("/home/sorenwh")) || has('nvim')
   " set noexpandtab
   " set softtabstop=0
   set updatetime=100
-  call neomake#configure#automake('nrwi', 500)
 else
   " set expandtab
 endif
@@ -249,9 +239,6 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
-
-"go to definition
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -285,8 +272,8 @@ nnoremap § :call fzf#run({'source': 'find .', 'sink': 'tabedit', 'down': '40%'}
 nnoremap <leader>½ :call fzf#run({'source': 'find ~/', 'sink': 'tabedit', 'down': '40%'})<CR>
 
 " Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
