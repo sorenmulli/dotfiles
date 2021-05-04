@@ -12,6 +12,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+  " Indentation guides
+  Plug 'thaerkh/vim-indentguides'
   " Git support
   Plug 'tpope/vim-fugitive'
   " Using quoting
