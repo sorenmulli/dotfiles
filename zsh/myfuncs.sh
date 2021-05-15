@@ -5,3 +5,6 @@ panmark() {
 del_conflicts() {
     find . -type f -name '*(conflicted\ copy\ *' -delete
 }
+krefresh() {
+    kquitapp5 plasmashell && kstart5 plasmashell &
+}
