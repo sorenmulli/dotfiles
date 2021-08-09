@@ -49,7 +49,7 @@ setopt MENU_COMPLETE
 setopt AUTO_CD
 setopt PUSHDMINUS
 #Quick access to school subjects
-cdpath=$HOME/Nextcloud/semester6
+cdpath=$HOME/Nextcloud/semester7
 # Function for enter on empty line https://stackoverflow.com/questions/30169090/zsh-behavior-on-enter
 my-accept-line () {
     # check if the buffer does not contain any words
@@ -100,6 +100,7 @@ export PYTHONPATH=$PYTHONPATH:~/Nextcloud/bach/daLUKE
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib:/usr/local/lib
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_SHELL=zsh
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
