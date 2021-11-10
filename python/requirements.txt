@@ -1,3 +1,6 @@
+ipdb
+pynvim
+wheel
 pillow
 imageio
 opencv-python
@@ -9,11 +12,9 @@ networkx
 scikit-learn
 pyperclip
 ipython
-ipdb
 pytest
 pylint
 coverage
 requests
 wget
 jupyter
-neovim

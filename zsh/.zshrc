@@ -99,10 +99,6 @@ export PYTHONBREAKPOINT='ipdb.set_trace'
 export PYTHONPATH=$PYTHONPATH:~/Nextcloud/bach/daLUKE
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib:/usr/local/lib
 
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export PYENV_SHELL=zsh
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 #### TEX
 export TEXINPUTS='.:~/Nextcloud/Software/LaTeX/EndLosung:'
@@ -117,3 +113,8 @@ source ~/dotfiles/zsh/.ohmyzsh_compat
 source ~/dotfiles/zsh/myfuncs.sh
 # Plugins
 source ~/dotfiles/zsh/.zsh_plugins.sh
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_SHELL=zsh
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
