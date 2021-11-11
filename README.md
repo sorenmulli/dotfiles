@@ -37,7 +37,7 @@ Install `neovim` and `xsel` from package man.
 Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ### i3
-Install `i3gaps` and multiple other packages.
+Install `i3gaps`, `dmenu`, `i3status`, `feh`, `picom`
 ```
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/i3/i3status ~/.config/i3status/config
