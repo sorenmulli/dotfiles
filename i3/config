@@ -36,7 +36,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id ~/.fehbg &
 exec_always --no-startup-id picom -bc --vsync
 
-# Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume"
 bindsym XF86AudioLowerVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
 bindsym XF86AudioMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mute"
@@ -208,6 +207,7 @@ for_window [class="Plasmoidviewer"] floating enable, border none
 for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"]
+no_focus [class="plasmashell" window_type="on_screen_display"]
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

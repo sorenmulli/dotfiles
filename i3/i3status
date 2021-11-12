@@ -23,7 +23,7 @@ order += "wireless _first_"
 
 wireless _first_ {
         format_up = "📡%quality på %essid" #(%ip)"
-        format_down = "📡%down"
+        format_down = "📡 nede :("
 }
 
 # ethernet _first_ {
