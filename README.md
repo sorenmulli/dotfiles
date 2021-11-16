@@ -41,7 +41,13 @@ Install `i3gaps`, `dmenu`, `i3status`, `feh`, `picom`
 ```
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/i3/i3status ~/.config/i3status/config
+```
 
+## ranger
+Install `ranger` and `w3m`
+```
+ln -s ~/dotfiles/ranger/rc.conf ~/.config/ranger
+ln -s ~/dotfiles/ranger/rifle.conf ~/.config/ranger
 ```
 
 ### Key remap
