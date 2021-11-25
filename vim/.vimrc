@@ -40,19 +40,7 @@ call plug#begin('~/.vim/plugged')
   else
     Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
   endif
-if isdirectory(expand("/home/sorenwh"))
-  "LaTeX
   Plug 'lervag/vimtex'
-else
-  " vim-test - lader dig køre perl-tests inde fra din editor
-  Plug 'janko-m/vim-test'
-  Plug '~/dev-utils/conf/vim'
-  " Mojolicious syntax highlighting (vores web-framework):
-  Plug 'yko/mojo.vim'
-  Plug 'pangloss/vim-javascript'
-  Plug 'posva/vim-vue'
-  Plug 'editorconfig/editorconfig-vim'
-endif
 call plug#end()
 
 let mapleader = ","
