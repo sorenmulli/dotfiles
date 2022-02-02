@@ -91,10 +91,15 @@ snippet begin "\begin{} ... \end{} block"
 endsnippet 
 
 # Tabular
-snippet tab "tabular (or arbitrary) environment"
-\\begin{${1:tabular}}{${2:c}}
-	${0:${VISUAL}}
-\\end{$1}
+snippet tab "table environment (tabular)"
+\\begin{table}[H]
+	\\centering
+		\\begin{tabular}{${1:c}}
+			${0:${VISUAL}}
+		\\end{tabular}
+	\\caption{${2}}
+	\\label{tab:${3}}
+\\end{table}\\noindent
 endsnippet 
 
 # Align
