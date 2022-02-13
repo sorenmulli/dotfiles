@@ -11,23 +11,23 @@ alias \
 
 # Config
 alias \
-     zrc='$EDITOR ~/dotfiles/zsh/.zshrc'\
-     zplug='$EDITOR ~/dotfiles/zsh/.zsh_plugins.txt'\
-     zalias='$EDITOR ~/dotfiles/zsh/.zsh_aliases'\
-     vimrc='$EDITOR ~/dotfiles/vim/.vimrc'
+    zrc='$EDITOR ~/dotfiles/zsh/.zshrc'\
+    zplug='$EDITOR ~/dotfiles/zsh/.zsh_plugins.txt'\
+    zalias='$EDITOR ~/dotfiles/zsh/.zsh_aliases'\
+    vimrc='$EDITOR ~/dotfiles/vim/.vimrc'
 
 # Paths
 alias \
     n="cd $HOME/Nextcloud"\
-    prog="cd $HOME/Nextcloud/Software/Programmering"\
-    c="cd $HOME/Nextcloud/bach/daLUKE"\
-    a="cd $HOME/Nextcloud/absis/pyaccount"
-
+    h="cd $HOME"
 
 # Useful programs and shorthands
 alias \
-    nv='$EDITOR .'
+    nv="$EDITOR ."\
+    x="xdg-open . > /dev/null 2>&1"
+
 
 uge()       {curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)';}
 vgdiff()    {nvim -p $(git ls-files -o -m --exclude-standard);}
 nf()        { fzf | xargs -r -I % $EDITOR %; }
+xo()        { xdg-open $1 > /dev/null 2>&1}
