@@ -117,4 +117,5 @@ source ~/dotfiles/zsh/.zsh_plugins.sh
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PYENV_SHELL=zsh
 eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
