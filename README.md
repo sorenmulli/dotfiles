@@ -23,7 +23,7 @@ Reboot for `chsh` to take effect.
 Run `zinstall` for plugin install.
 
 ### Python
-Install `pyenv`, `pyenv-virtualenv`, then `pyenv install 3.9.7` and `pyenv virtualenv day2day39 3.9.7` and `pyenv global day2day39`.
+Install `pyenv`, `pyenv-virtualenv`, then `pyenv install 3.9.?` and `pyenv virtualenv 3.9.? day2day39` and `pyenv global day2day39`.
 Restart shell, then
 ```
 pip install --upgrade pip
@@ -37,7 +37,7 @@ Install `neovim` and `xsel` from package man.
 Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ### i3
-Install `i3gaps`, `dmenu`, `i3status`, `feh`, `picom`
+Install `i3-gaps`, `dmenu`, `i3status`, `feh`, `picom`
 ```
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/i3/i3status ~/.config/i3status/config
