@@ -41,6 +41,7 @@ Install `i3-gaps`, `dmenu`, `i3status`, `feh`, `picom`
 ```
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/i3/i3status ~/.config/i3status/config
+ln -s ~/dotfiles/i3/plasma-i3.desktop /usr/share/xsessions/plasma-i3.desktop
 ```
 
 ## ranger
