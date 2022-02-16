@@ -37,13 +37,20 @@ Install `neovim` and `xsel` from package man.
 Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ### i3
-Install `i3-gaps`, `dmenu`, `i3status`, `feh`, `picom`, `alacritty`
+Install `i3-gaps`, `dmenu`, `i3status`, `feh`, `picom`, `alacritty`, `lightdm-gtk-greeter-settings`
 ```
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/i3/i3status ~/.config/i3status/config
 cp ~/dotfiles/i3/plasma-i3.desktop /usr/share/xsessions/plasma-i3.desktop
-`echo "feh --no-fehbg --bg-scale '/home/sorenwh/Billeder/wall.jpg'" > ~/.fehbg`
+cp ~/dotfiles/i3/.fehbf ~/.fehbg
 ln -s ~/dotfiles/i3/alacritty.yml ~/.config/alacritty/alacritty.yml
+```
+In `/etc/lightdm/lightdm.conf`, set lightdm-gtk-greeter as greeter-session.
+Set lock screen wallpaper using lightdm-gtk-greeter-settings where the pic must be in /usr/share/pixmaps
+Then,
+```
+sudo systemctl disable sddm -f
+sudo systemctl enable lightdm -f
 ```
 
 ## ranger
