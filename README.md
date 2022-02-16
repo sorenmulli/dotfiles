@@ -67,3 +67,12 @@ Option "XkbOptions" "caps:swapescape"
 ```
 to  `/etc/X11/xorg.conf.d/00-keyboard.conf`
 
+## GitHub access
+
+```
+ssh-keygen -t ed25519 -C "swholm@protonmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+```
+Insert into https://github.com/settings/ssh/new 
