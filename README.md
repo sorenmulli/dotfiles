@@ -37,11 +37,13 @@ Install `neovim` and `xsel` from package man.
 Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ### i3
-Install `i3-gaps`, `dmenu`, `i3status`, `feh`, `picom`
+Install `i3-gaps`, `dmenu`, `i3status`, `feh`, `picom`, `alacritty`
 ```
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/i3/i3status ~/.config/i3status/config
 cp ~/dotfiles/i3/plasma-i3.desktop /usr/share/xsessions/plasma-i3.desktop
+`echo "feh --no-fehbg --bg-scale '/home/sorenwh/Billeder/wall.jpg'" > ~/.fehbg`
+ln -s ~/dotfiles/i3/alacritty.yml ~/.config/alacritty/alacritty.yml
 ```
 
 ## ranger
