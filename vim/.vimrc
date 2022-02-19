@@ -322,10 +322,6 @@ noremap <leader>d "+d
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-
 " Easy indentation
 inoremap <S-Tab> <C-O><lt><lt>
 nnoremap <Tab> >>
