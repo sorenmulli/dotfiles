@@ -123,7 +123,7 @@ bindsym $mod+Control+h workspace prev
 
 # Move focused left/right, then goto that
 bindsym $mod+Control+Shift+l move container to workspace next; workspace next
-bindsym $mod+Control+Shfit+h move container to workspace prev; workspace prev
+bindsym $mod+Control+Shift+h move container to workspace prev; workspace prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
