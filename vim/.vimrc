@@ -14,6 +14,7 @@ endif
 call plug#begin('~/.vim/plugged')
   " Indentation guides
   Plug 'thaerkh/vim-indentguides'
+  Plug 'frazrepo/vim-rainbow'
   " Git support
   Plug 'tpope/vim-fugitive'
   " Using quoting
@@ -93,9 +94,9 @@ hi clear SpellBad
 hi SpellBad cterm=underline
 
 autocmd FileType tex,md,gitcommit set spell
-let g:tex_flavor = "latex"
-set conceallevel=2
-let g:tex_conceal="abdgm"
+autocmd FileType tex,md,gitcommit set wrap
+
+let g:vimtex_syntax_conceal_disable=1
 
 let g:python_highlight_all = 1
 let g:python_highlight_indent_errors  = 0
@@ -339,6 +340,7 @@ set softtabstop=4
 set expandtab
 
 set guicursor+=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
+let g:rainbow_active = 1
 
 if v:version > 704 || has("nvim")
     let &t_SI = "\<Esc>[6 q"
