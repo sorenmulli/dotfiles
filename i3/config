@@ -9,7 +9,7 @@ font pango:Noto Mono 8
 #font pango:DejaVu Sans Mono 8
 
 exec --no-startup-id ~/.fehbg &
-exec_always --no-startup-id picom -bc --vsync
+exec_always --no-startup-id picom -bc --vsync --opacity-rule "100:name *= 'Firefox'"
 
 # control kde volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume"

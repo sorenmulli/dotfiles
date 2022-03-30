@@ -75,14 +75,12 @@ else
   set signcolumn=yes
 endif
 
-
 "TeX stuff
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_fold_enabled = 1
     " Okular recommended settings
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-let g:vimtex_view_general_options_latexmk = '--unique'
 
 if empty(v:servername) && exists('*remote_startserver')
     call remote_startserver('VIM')
