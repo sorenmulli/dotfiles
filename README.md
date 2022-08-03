@@ -41,9 +41,12 @@ Install `i3-gaps`, `dmenu`, `i3status`, `feh`, `picom`, `alacritty`, `lightdm-gt
 ```
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/i3/i3status ~/.config/i3status/config
-cp ~/dotfiles/i3/plasma-i3.desktop /usr/share/xsessions/plasma-i3.desktop
+cp ~/dotfiles/i3/plasma-custom-i3.service ~/.config/systemd/user/plasma-custom-i3.service
 cp ~/dotfiles/i3/.fehbf ~/.fehbg
 ln -s ~/dotfiles/i3/alacritty.yml ~/.config/alacritty/alacritty.yml
+systemctl --user mask plasma-kwin_x11.service
+systemctl daemon-reload
+systemctl --user enable plasma-custom-i3.service
 ```
 In `/etc/lightdm/lightdm.conf`, set lightdm-gtk-greeter as greeter-session.
 Set lock screen wallpaper using lightdm-gtk-greeter-settings where the pic must be in /usr/share/pixmaps
