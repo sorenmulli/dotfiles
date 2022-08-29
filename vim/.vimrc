@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
   " Fuzzyfinding
   Plug 'junegunn/fzf'
+  Plug 'psf/black', { 'branch': 'stable' }
   " More colors
   Plug 'rafi/awesome-vim-colorschemes'
   Plug 'vim-python/python-syntax'
