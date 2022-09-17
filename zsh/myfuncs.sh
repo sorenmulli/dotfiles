@@ -8,3 +8,7 @@ del_conflicts() {
 krefresh() {
     kquitapp5 plasmashell && kstart5 plasmashell &
 }
+
+hpc() {
+    ssh -i ~/.ssh/gbar s183911@login.hpc.dtu.dk
+}

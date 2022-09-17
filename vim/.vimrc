@@ -20,8 +20,6 @@ call plug#begin('~/.vim/plugged')
   " Using quoting
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
-  " Bedre perl-highlighting
-  Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp highlight-all-pragmas moose test-more try-tiny method-signatures' }
   " Fuzzyfinding
   Plug 'junegunn/fzf'
   Plug 'psf/black', { 'branch': 'stable' }
@@ -48,21 +46,7 @@ call plug#end()
 let mapleader = ","
 let maplocalleader = '.'
 
-" vim-perl configuration {{{
-" highlight advanced perl vars inside string
-let perl_extended_vars=1
-" do highlighting on POD comments
-let perl_include_pod=1
-" increase number of lines used when syntax
-let perl_sync_dist=1000
-autocmd BufEnter * :syntax sync minlines=300
-" allow subroutine signatures
-let perl_sub_signatures=1
-" }}}
-
 source $HOME/dotfiles/vim/helpers.vim
-
-nnoremap <F9> :call OpenModuleUnderCursor()<CR>
 
 " coc.nvim related settings
 source $HOME/dotfiles/vim/cocstuff.vim
@@ -80,7 +64,7 @@ endif
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_fold_enabled = 1
 
-    " Okular recommended settings
+" Okular recommended settings
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
@@ -110,7 +94,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-x>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " Snip settings
-
 let g:UltiSnipsEditSplit="tabdo"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/dotfiles/vim/mysnips']
 
@@ -124,7 +107,6 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 
 " Enable filetype plugins
 filetype plugin on
-
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -179,7 +161,7 @@ set tm=500
 set foldcolumn=1
 
 " Colours
-colorscheme onedark
+colorscheme spacecamp
 
 " Enable syntax highlighting
 syntax enable
@@ -203,11 +185,7 @@ set ffs=unix,dos,mac
 
 "Settings dependant on being async or not
 if isdirectory(expand("/home/sorenwh")) || has('nvim')
-  " set noexpandtab
-  " set softtabstop=0
   set updatetime=100
-else
-  " set expandtab
 endif
 
 " Don't save in same folder; annoys git
@@ -340,7 +318,7 @@ set softtabstop=4
 set expandtab
 
 set guicursor+=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
-let g:rainbow_active = 1
+au FileType html let g:rainbow_active = 1
 
 if v:version > 704 || has("nvim")
     let &t_SI = "\<Esc>[6 q"
