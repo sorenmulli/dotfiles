@@ -104,7 +104,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib:/usr/local/lib
 export TEXINPUTS='.:~/Nextcloud/Software/LaTeX/EndLosung:'
 
 #### ALIAS
-source ~/dotfiles/zsh/.zsh_aliases
+source ~/dotfiles/zsh/zsh_aliases.sh
 
 #### PLUGINS AND COMMANDS
 # compatability functions for ohmyzsh plugs
@@ -113,6 +113,8 @@ source ~/dotfiles/zsh/.ohmyzsh_compat
 source ~/dotfiles/zsh/myfuncs.sh
 # Plugins
 source ~/dotfiles/zsh/.zsh_plugins.sh
+# Constants
+source ~/dotfiles/zsh/consts.sh
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PYENV_SHELL=zsh
@@ -121,7 +123,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/sorenwh/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/sorenwh/.google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/$USER/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/$USER/.google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/sorenwh/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/sorenwh/.google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/$USER/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/$USER/.google-cloud-sdk/completion.zsh.inc'; fi
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True

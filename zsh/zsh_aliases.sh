@@ -1,5 +1,5 @@
 # Install zsh plugins
-alias zinstall="antibody bundle < ~/dotfiles/zsh/.zsh_plugins.txt > ~/dotfiles/zsh/.zsh_plugins.sh"
+alias zinstall="antibody bundle < ~/dotfiles/zsh/zsh_plugins.txt > ~/dotfiles/zsh/.zsh_plugins.sh"
 
 # Standard programs
 alias \

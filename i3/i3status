@@ -39,23 +39,23 @@ volume master {
 }
 
 battery all {
-        format = "💡 %status %percentage %remaining"
+    format = "💡 %status %percentage %remaining"
 }
 
 disk "/" {
-        format = "💾 %avail"
+    format = "💾 %avail"
 }
 
 load {
-        format = "⚙️ %1min"
+    format = "⚙️ %1min"
 }
 
 memory {
-        format = "📊 %used"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+    format = "📊 %used"
+    threshold_degraded = "1G"
+    format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        format = "⏳ %H:%M %d/%m-%Y"
+    format = "⏳ %H:%M %d/%m-%Y"
 }
