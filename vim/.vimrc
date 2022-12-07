@@ -145,9 +145,6 @@ set lazyredraw
 " For regular expressions turn magic on
 set magic
 
-" Show matching brackets when text indicator is over them
-set showmatch
-
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -165,6 +162,7 @@ colorscheme spacecamp
 
 " Enable syntax highlighting
 syntax enable
+
 
 " Highlight trailing whitespaces
 set list
@@ -326,3 +324,7 @@ if v:version > 704 || has("nvim")
     let &t_EI = "\<Esc>[2 q"
 endif
 
+" Show matching brackets when text indicator is over them
+set showmatch
+highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
+highlight MatchParen gui=underline guibg=black guifg=NONE
