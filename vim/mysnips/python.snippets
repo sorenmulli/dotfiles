@@ -1,3 +1,8 @@
+snippet op "open()"
+with open(${1:path}, "${2:r}", encoding="utf-8") as ${3:file}:
+    ${0}
+endsnippet
+
 snippet bp "breakpoint()"
 breakpoint()
 endsnippet
@@ -19,7 +24,7 @@ import seaborn as sns
 
 endsnippet
 
-snippet rest "Docstring in rest format"
+snippet doc "Docstring in rest format"
 """${1:Description}
 
 :param ${2:type param}:  ${3:Argument}
