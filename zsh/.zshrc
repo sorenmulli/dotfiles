@@ -101,7 +101,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib:/usr/local/lib
 
 
 #### TEX
-export TEXINPUTS='.:~/Nextcloud/Software/LaTeX/EndLosung:'
+export TEXINPUTS='.:~/Nextcloud/Andet/Software/LaTeX/EndLosung:'
 
 #### ALIAS
 source ~/dotfiles/zsh/zsh_aliases.sh
