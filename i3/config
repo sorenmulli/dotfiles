@@ -163,6 +163,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 for_window [title="Skrivebord — Plasma"] kill, floating enable, border none
+for_window [title="Skrivebord @ QRect\(0,0 1920x1080\)  — Plasma"] kill, floating enable, border none
 for_window [class="plasmashell"] floating enable
 for_window [class="Plasma"] floating enable, border none
 for_window [title="plasma-desktop"] floating enable, border none
