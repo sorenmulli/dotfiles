@@ -50,6 +50,7 @@ setopt AUTO_CD
 setopt PUSHDMINUS
 #Quick access to school subjects
 cdpath=$HOME/Nextcloud/cand3
+cdpath=$HOME/Nextcloud/cand4
 # Function for enter on empty line https://stackoverflow.com/questions/30169090/zsh-behavior-on-enter
 my-accept-line () {
     # check if the buffer does not contain any words

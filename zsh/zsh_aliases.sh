@@ -31,3 +31,4 @@ uge()       {curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)';
 vgdiff()    {nvim -p $(git ls-files -o -m --exclude-standard);}
 nf()        { fzf | xargs -r -I % $EDITOR %; }
 xo()        { xdg-open $1 > /dev/null 2>&1}
+fnd()      { find . -name "$1" }
