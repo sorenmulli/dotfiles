@@ -10,5 +10,5 @@ krefresh() {
 }
 
 hpc() {
-    ssh -i ~/.ssh/gbar s183911@login.hpc.dtu.dk
+    ssh -i ~/.ssh/gbar swiho@login.hpc.dtu.dk
 }

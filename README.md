@@ -9,7 +9,7 @@ Clone to `~/`
 
 `zsh` package from package man.
 
-`antibody` from AUR or install from [releases page](https://github.com/getantibody/antibody/releases)
+`git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote`
 
 Run
 
@@ -20,14 +20,12 @@ then
 `chsh -s $(which zsh)`
 
 Reboot for `chsh` to take effect.
-Run `zinstall` for plugin install.
 
 ### Python
-Install `pyenv`, `pyenv-virtualenv`, then `pyenv install 3.9.?` and `pyenv virtualenv 3.9.? day2day39` and `pyenv global day2day39`.
+Install `pyenv`, `pyenv-virtualenv`, then `pyenv install 3.11` and `pyenv virtualenv 3.11 day2day311` and `pyenv global day2day311`.
 Restart shell, then
 ```
-pip install --upgrade pip
-pip install -r ~/dotfiles/python/requirements.txt
+pip install --upgrade pip pip install -r ~/dotfiles/python/requirements.txt
 ```
 
 ### (neo)vim
@@ -63,7 +61,14 @@ ln -s ~/dotfiles/ranger/rc.conf ~/.config/ranger
 ln -s ~/dotfiles/ranger/rifle.conf ~/.config/ranger
 ```
 
-### Key remap
+## Key remap
+Set
+```
+XKBOPTIONS="caps:escape"
+```
+in `/etc/keyboard`.
+
+Or (previously)
 Add 
 ```
 Option "XkbOptions" "caps:swapescape"

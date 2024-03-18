@@ -29,12 +29,7 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 
 ##### PATH
-# Additions to PATH is dependant on whether on job or home
-if [ -d $HOME/jobxx ]; then
-    source $HOME/dotfiles/zsh/ji_path.sh
-else
-    source $HOME/dotfiles/zsh/home_path.sh
-fi
+source $HOME/dotfiles/zsh/path.sh
 
 #### COMPLETION
 zstyle ':completion:*' menu select
@@ -48,9 +43,14 @@ setopt MENU_COMPLETE
 #### CD and prompt niceness
 setopt AUTO_CD
 setopt PUSHDMINUS
+
+#### Plugins
+source $HOME/.antidote/antidote.zsh
+antidote load
+
 #Quick access to school subjects
-cdpath=$HOME/Nextcloud/cand3
 cdpath=$HOME/Nextcloud/cand4
+
 # Function for enter on empty line https://stackoverflow.com/questions/30169090/zsh-behavior-on-enter
 my-accept-line () {
     # check if the buffer does not contain any words
@@ -97,7 +97,6 @@ export MYVIMRC="$HOME/dotfiles/vim/.vimrc"
 
 #### PYTHON
 export PYTHONBREAKPOINT='ipdb.set_trace'
-export PYTHONPATH=$PYTHONPATH:~/Nextcloud/bach/daLUKE
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib:/usr/local/lib
 
 
@@ -112,8 +111,6 @@ source ~/dotfiles/zsh/zsh_aliases.sh
 source ~/dotfiles/zsh/.ohmyzsh_compat
 # My CLI functions
 source ~/dotfiles/zsh/myfuncs.sh
-# Plugins
-source ~/dotfiles/zsh/.zsh_plugins.sh
 # Constants
 source ~/dotfiles/zsh/consts.sh
 
@@ -125,7 +122,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/$USER/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/$USER/.google-cloud-sdk/path.zsh.inc'; fi
-
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/$USER/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/$USER/.google-cloud-sdk/completion.zsh.inc'; fi
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True

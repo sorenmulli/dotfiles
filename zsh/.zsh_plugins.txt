@@ -12,4 +12,3 @@ robbyrussell/oh-my-zsh path:plugins/wd
 robbyrussell/oh-my-zsh path:plugins/web-search
 
 peterhurford/git-it-on.zsh
-
