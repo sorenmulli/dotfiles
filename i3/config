@@ -1,32 +1,23 @@
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Noto Mono 8
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
 exec --no-startup-id ~/.fehbg &
-exec_always --no-startup-id picom -bc --vsync --opacity-rule "100:name *= 'Firefox'"
-
-# control kde volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume"
-bindsym XF86AudioLowerVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
-bindsym XF86AudioMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mute"
-bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mic_mute"
 
 # handy shortcuts
+bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+i exec firefox
-bindsym $mod+o exec dolphin
-bindsym $mod+u exec dmenu_run
+bindsym $mod+o exec thunar
+bindsym Print exec xfce4-screenshooter -r
+bindsym $mod+$alt+L exec xflock4
+bindsym $mod+u exec xfce4-popup-whiskermenu
+bindsym $alt+space exec rofi -show drun -theme "$HOME/dotfiles/i3/rofi.rasi"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -131,10 +122,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-gaps inner 5
-gaps outer 0
-smart_gaps on
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -162,21 +149,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [title="Skrivebord — Plasma"] kill, floating enable, border none
-for_window [title="Skrivebord @ QRect\(0,0 1920x1080\)  — Plasma"] kill, floating enable, border none
-for_window [class="plasmashell"] floating enable
-for_window [class="Plasma"] floating enable, border none
-for_window [title="plasma-desktop"] floating enable, border none
-for_window [title="win7"] floating enable, border none
-for_window [class="krunner"] floating enable, border none
-for_window [class="Kmix"] floating enable, border none
-for_window [class="Klipper"] floating enable, border none
-for_window [class="Plasmoidviewer"] floating enable, border none
-for_window [class="(?i)*nextcloud*"] floating disable
-for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
-no_focus [class="plasmashell" window_type="notification"]
-no_focus [class="plasmashell" window_type="on_screen_display"]
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -187,3 +159,11 @@ bar {
       background #242424
     }
 }
+
+# border colours
+client.focused #2c5863 #1a434d #a7c2c2 #24898f #1a434d 
+client.focused_inactive #1b3334 #36494a #a7c2c2 #2b3d3e #36494a 
+client.unfocused #1b3334 #122829 #6e8a8a #152829 #122829 
+client.urgent #1a2b2e #521717 #a7c2c2 #521717 #521717 
+client.placeholder #000000 #071516 #a7c2c2 #000000 #071516 
+client.background #a7c2c2

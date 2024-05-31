@@ -158,7 +158,7 @@ set tm=500
 set foldcolumn=1
 
 " Colours
-colorscheme spacecamp
+colorscheme deep-space
 
 " Enable syntax highlighting
 syntax enable
