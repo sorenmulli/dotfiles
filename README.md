@@ -64,9 +64,9 @@ ln -s ~/dotfiles/ranger/rifle.conf ~/.config/ranger
 ## Key remap
 Set
 ```
-XKBOPTIONS="caps:escape"
+XKBOPTIONS="caps:swapescape"
 ```
-in `/etc/keyboard`.
+in `/etc/default/keyboard`.
 
 Or (previously)
 Add 
