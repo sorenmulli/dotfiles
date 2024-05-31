@@ -16,6 +16,9 @@ bindsym $mod+$alt+L exec xflock4
 bindsym $mod+u exec xfce4-popup-whiskermenu
 bindsym $alt+space exec rofi -show drun -theme "$HOME/dotfiles/i3/rofi.rasi"
 
+bindsym $alt+s scratchpad show
+bindsym $alt+Shift+s move scratchpad
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -167,3 +170,21 @@ client.unfocused #1b3334 #122829 #6e8a8a #152829 #122829
 client.urgent #1a2b2e #521717 #a7c2c2 #521717 #521717 
 client.placeholder #000000 #071516 #a7c2c2 #000000 #071516 
 client.background #a7c2c2
+
+
+# Assignments
+assign [class="Signal"] $ws9
+assign [class="Slack"] $ws1
+assign [class="thunderbird"] $ws1
+
+# Workspace to screen assignment
+workspace $ws1 output DVI-I-1-1 eDP
+workspace $ws2 output eDP
+workspace $ws3 output DVI-I-2-2  eDP
+workspace $ws4 output eDP
+workspace $ws5 output eDP
+workspace $ws6 output eDP
+workspace $ws7 output eDP
+workspace $ws8 output eDP
+workspace $ws9 output eDP
+workspace $ws10 output eDP

@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Konfekt/FastFold'
   " Code completion
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'github/copilot.vim'
   " Snippets
   Plug 'sirver/UltiSnips'
   Plug 'christoomey/vim-conflicted'
