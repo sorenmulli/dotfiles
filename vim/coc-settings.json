@@ -1,0 +1,6 @@
+{
+    "pyright.inlayHints.parameterTypes": false,
+    "python.linting.ruffEnabled": true,
+    "python.formatting.provider": "ruff"
+}
+

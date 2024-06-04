@@ -31,11 +31,21 @@ pip install --upgrade pip pip install -r ~/dotfiles/python/requirements.txt
 ### (neo)vim
 Install `neovim` and `xsel` from package man.
 
+node and npm are required for coc.nvim which needs symlink
+```
+ln -s ~/dotfiles/vim/coc-settings.json ~/.config/nvim/coc-settings.json
+```
+
+On first open, after pluginstall, run 
+```
+:CocInstall coc-pyright
+```
+
 ### tmux
 Install `tmux` then create config symlink by `ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ### i3
-Install `i3`, `i3status`, `feh`, `picom`, `rofi`
+Install `i3`, `i3status`, `feh`, `picom`, `rofi`, `rofi-calc`
 ```
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/i3/i3status ~/.config/i3status/config

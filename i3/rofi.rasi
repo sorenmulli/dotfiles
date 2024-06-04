@@ -9,14 +9,17 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser,window";
+	modi:                       "drun,run,filebrowser,window,calc";
     show-icons:                 true;
-    kb-mode-next: "Alt+Tab";
-    kb-mode-previous: "Alt+Shift+Tab";
+    kb-mode-next: "Alt+l";
+    kb-mode-previous: "Alt+h";
+    kb-row-down  : "Alt+j";
+    kb-row-up    : "Alt+k";
     display-drun:               "APPS";
     display-run:                "RUN";
     display-filebrowser:        "FILES";
     display-window:             "WINDOW";
+    display-calc:               "CALC";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }
