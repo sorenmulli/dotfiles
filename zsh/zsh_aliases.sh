@@ -23,6 +23,8 @@ alias \
     nv="$EDITOR ."\
     x="xdg-open . > /dev/null 2>&1"
 
+alias xc='xclip -selection clipboard'
+alias gomorgen=".screenlayout/default.sh && ./.fehbg && setxkbmap -option 'caps:swapescape'"
 
 uge()       {curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)';}
 vgdiff()    {nvim -p $(git ls-files -o -m --exclude-standard);}

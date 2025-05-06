@@ -8,8 +8,8 @@ compinit
 promptinit
 
 #### HISTORY
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 HISTFILE=~/dotfiles/zsh/.histfile
 PROMPT_COMMAND='history -a'
@@ -125,3 +125,21 @@ if [ -f '/home/$USER/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/$USER/.goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/$USER/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/$USER/.google-cloud-sdk/completion.zsh.inc'; fi
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+export SPACESHIP_KUBECTL_SHOW=true
+
+# Function to check and activate venv
+check_and_activate_venv() {
+  if [[ -d ".venv" ]]; then
+        if [[ -z "$VIRTUAL_ENV" || "$VIRTUAL_ENV" != "$PWD/.venv" || "$(which python)" != "$PWD/.venv/bin/python" ]]; then
+      echo "Activating virtual environment..."
+      source .venv/bin/activate
+    fi
+  fi
+}
+
+cd() {
+  builtin cd "$@"
+  check_and_activate_venv
+}
+
+check_and_activate_venv

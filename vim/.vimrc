@@ -22,7 +22,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'
   " Fuzzyfinding
   Plug 'junegunn/fzf'
-  Plug 'psf/black', { 'branch': 'stable' }
   " More colors
   Plug 'rafi/awesome-vim-colorschemes'
   Plug 'vim-python/python-syntax'
@@ -82,6 +81,7 @@ autocmd FileType tex,md,gitcommit set spell
 autocmd FileType tex,md,gitcommit set wrap
 
 let g:vimtex_syntax_conceal_disable=1
+let g:vim_json_conceal = 0
 
 let g:python_highlight_all = 1
 let g:python_highlight_indent_errors  = 0
@@ -225,6 +225,8 @@ try
   set stal=2
 catch
 endtry
+
+autocmd BufNewFile,BufRead *.jsonl set filetype=json
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
