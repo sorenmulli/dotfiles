@@ -51,14 +51,7 @@ source $HOME/dotfiles/vim/helpers.vim
 " coc.nvim related settings
 source $HOME/dotfiles/vim/cocstuff.vim
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+set signcolumn=yes
 
 "TeX stuff
 let g:vimtex_quickfix_open_on_warning = 0

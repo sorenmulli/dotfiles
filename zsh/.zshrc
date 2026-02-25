@@ -89,6 +89,9 @@ zle -N zle-keymap-select
 bindkey '^M' my-accept-line
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(my-accept-line)
 
+### Fugitive shortcut
+bindkey -s "^G^G" "nvim -c 'Git | only'\n"
+
 #### EDITOR
 export VISUAL=nvim
 export EDITOR="$VISUAL"
@@ -114,11 +117,14 @@ source ~/dotfiles/zsh/myfuncs.sh
 # Constants
 source ~/dotfiles/zsh/consts.sh
 
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export PYENV_SHELL=zsh
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+source ~/dotfiles/zsh/fzf.zsh
+export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git --exclude .venv --exclude .npm --exclude .pyenv --exclude .cache --exclude .mozilla --exclude .config . $HOME'
+
+#export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+#export PYENV_SHELL=zsh
+#eval "$(pyenv init --path)"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/$USER/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/$USER/.google-cloud-sdk/path.zsh.inc'; fi

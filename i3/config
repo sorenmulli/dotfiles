@@ -181,7 +181,7 @@ assign [class="Slack"] $ws9
 workspace $ws1 output DVI-I-2-2 eDP
 workspace $ws2 output DVI-I-2-2 eDP
 workspace $ws3 output DVI-I-2-2 eDP
-workspace $ws4 output DVI-I-2-2 eDP
+workspace $ws4 output DVI-I-1-1 eDP
 workspace $ws5 output DVI-I-1-1  eDP
 workspace $ws6 output DVI-I-1-1  eDP
 workspace $ws7 output DVI-I-1-1  eDP

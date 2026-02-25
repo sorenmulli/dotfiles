@@ -6,3 +6,5 @@ begin/!
 p
 ingress
 if
+config/!
+commit
