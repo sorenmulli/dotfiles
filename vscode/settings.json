@@ -1,0 +1,169 @@
+{
+  "keyboard.dispatch": "keyCode",
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.leader": ",",
+  "vim.incsearch": true,
+  "vim.smartRelativeLine": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        {
+          "command": "vim.remap",
+          "args": {
+            "after": [
+              "/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        ":w"
+      ]
+    },
+    // Clear search highlight
+    {
+      "before": [
+        "<leader>",
+        "<CR>"
+      ],
+      "commands": [
+        ":noh"
+      ]
+    },
+    // New line below and stay in normal mode
+    {
+      "before": [
+        "<leader>",
+        "o"
+      ],
+      "after": [
+        "o",
+        "<Esc>"
+      ]
+    },
+    // New line above and stay in normal mode
+    {
+      "before": [
+        "<leader>",
+        "O"
+      ],
+      "after": [
+        "O",
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "<tab>"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<S-tab>"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    },
+    {
+      "before": [
+        "0"
+      ],
+      "after": [
+        "^"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "q"
+      ],
+      "commands": [
+        ":q"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Tab/Shift-Tab for indent/dedent in visual mode
+    {
+      "before": [
+        "<tab>"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<S-tab>"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-u>": true,
+    "<C-f>": false,
+    "<C-æ>": false,
+    "<C-ø>": false,
+    "<C-å>": false,
+    "<C-w>": true
+  },
+  // Editor basics
+  "editor.lineNumbers": "relative",
+  "editor.cursorBlinking": "solid",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  // Hide clutter
+  "workbench.activityBar.location": "hidden", // use ctrl+shift+e/f instead
+  "workbench.statusBar.visible": true,
+  "breadcrumbs.enabled": true,
+  // Terminal
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  // Files
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  // Git (minimal since you use CLI)
+  "git.enabled": true,
+  "git.autofetch": true,
+  "git.enableSmartCommit": false,
+  "git.confirmSync": false,
+  "scm.diffDecorations": "gutter",
+  // Python
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "workbench.secondarySideBar.defaultVisibility": "hidden"
+}

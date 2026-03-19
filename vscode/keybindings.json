@@ -1,0 +1,72 @@
+[
+  {
+    "key": "ctrl+a j",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+a k",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+a e",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+a f",
+    "command": "workbench.view.search"
+  },
+  //  { "key": "ctrl+a l", "command": "copilot??" },
+  {
+    "key": "ctrl+a z",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
+  },
+  // New terminal (like tmux prefix-c)
+  {
+    "key": "ctrl+a c",
+    "command": "workbench.action.terminal.new"
+  },
+  // Next terminal (like tmux prefix-n)
+  {
+    "key": "ctrl+a n",
+    "command": "workbench.action.terminal.focusNext"
+  },
+  // Previous terminal (like tmux prefix-p)
+  {
+    "key": "ctrl+a p",
+    "command": "workbench.action.terminal.focusPrevious"
+  },
+  // Kill terminal (like tmux prefix-x)
+  {
+    "key": "ctrl+a x",
+    "command": "workbench.action.terminal.kill"
+  },
+  // Split terminal (like tmux prefix-%)
+  {
+    "key": "ctrl+a shift+5",
+    "command": "workbench.action.terminal.split"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "workbench.action.quickOpen"
+  },
+  // Command palette
+  {
+    "key": "ctrl+shift+space",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+a h",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+a l",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus"
+  }
+]
