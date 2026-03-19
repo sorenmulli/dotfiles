@@ -165,5 +165,9 @@
       "source.organizeImports": "explicit"
     }
   },
-  "workbench.secondarySideBar.defaultVisibility": "hidden"
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.startupEditor": "none",
+  "git.openRepositoryInParentFolders": "always"
 }
