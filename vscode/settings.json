@@ -169,5 +169,6 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
-  "git.openRepositoryInParentFolders": "always"
+  "git.openRepositoryInParentFolders": "always",
+  "workbench.editor.enablePreview": false
 }

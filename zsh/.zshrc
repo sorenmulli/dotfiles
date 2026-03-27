@@ -149,3 +149,5 @@ cd() {
 }
 
 check_and_activate_venv
+
+alias cdf='cd $(find ~/ -maxdepth 9 -type d | fzf) && code .'
