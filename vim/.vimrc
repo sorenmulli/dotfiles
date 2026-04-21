@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Konfekt/FastFold'
   " Code completion
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'github/copilot.vim'
+  " Plug 'github/copilot.vim'
   " Snippets
   Plug 'sirver/UltiSnips'
   Plug 'christoomey/vim-conflicted'
@@ -152,7 +152,7 @@ set tm=500
 set foldcolumn=1
 
 " Colours
-colorscheme deep-space
+colorscheme onedark
 
 " Enable syntax highlighting
 syntax enable

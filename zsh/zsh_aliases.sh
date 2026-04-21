@@ -4,7 +4,8 @@ alias \
     mv="mv -iv" \
     rm="rm -vI" \
     mkd="mkdir -pv" \
-    ls="ls --color=auto"
+    ls="eza --group-directories-first"\
+    cat='batcat --paging=never'
 
 # Config
 alias \
@@ -24,10 +25,11 @@ alias \
     x="xdg-open . > /dev/null 2>&1"
 
 alias xc='xclip -selection clipboard'
-alias gomorgen=".screenlayout/default.sh && ./.fehbg && setxkbmap -option 'caps:swapescape'"
+alias tmux="tmux -2"
+alias sshup='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa'
 
 uge()       {curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)';}
 vgdiff()    {nvim -p $(git ls-files -o -m --exclude-standard);}
 nf()        { fzf | xargs -r -I % $EDITOR %; }
 xo()        { xdg-open $1 > /dev/null 2>&1}
-fnd()      { find . -name "$1" }
+fnd()       { find . -name "$1" }

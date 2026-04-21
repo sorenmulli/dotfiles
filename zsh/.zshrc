@@ -112,26 +112,14 @@ source ~/dotfiles/zsh/zsh_aliases.sh
 #### PLUGINS AND COMMANDS
 # compatability functions for ohmyzsh plugs
 source ~/dotfiles/zsh/.ohmyzsh_compat
-# My CLI functions
-source ~/dotfiles/zsh/myfuncs.sh
-# Constants
-source ~/dotfiles/zsh/consts.sh
-
 source ~/dotfiles/zsh/fzf.zsh
-export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git --exclude .venv --exclude .npm --exclude .pyenv --exclude .cache --exclude .mozilla --exclude .config . $HOME'
+# export FZF_ALT_C_COMMAND='fdfind --type d --hidden --exclude .git --exclude .venv --exclude .npm --exclude .pyenv --exclude .cache --exclude .mozilla --exclude .config --exclude .vscode-server --exclude .npm-global --exclude __pycache__ --exclude .pytest_cache --exclude .local . $HOME'
+export FZF_ALT_C_COMMAND='fdfind --type d --exclude __pycache__ . $HOME'
 
-#export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-#export PYENV_SHELL=zsh
-#eval "$(pyenv init --path)"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/$USER/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/$USER/.google-cloud-sdk/path.zsh.inc'; fi
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/$USER/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/$USER/.google-cloud-sdk/completion.zsh.inc'; fi
-export USE_GKE_GCLOUD_AUTH_PLUGIN=True
-export SPACESHIP_KUBECTL_SHOW=true
+# Specifically for Danske bank
+source ~/dotfiles/zsh/danske.sh
+source ~/dotfiles/zsh/secrets.sh
+source ~/dotfiles/zsh/dbcli.sh
 
 # Function to check and activate venv
 check_and_activate_venv() {
@@ -149,5 +137,3 @@ cd() {
 }
 
 check_and_activate_venv
-
-alias cdf='cd $(find ~/ -maxdepth 9 -type d | fzf) && code .'

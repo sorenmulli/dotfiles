@@ -569,15 +569,13 @@ _fzf_comprun() {
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
 _fzf_compgen_path() {
-  fd --follow --hidden --exclude ".git" . "$1"
+  fdfind --follow --hidden --exclude ".git" . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
+  fdfind --type d --hidden --follow --exclude ".git" . "$1"
 }
-source <(fzf --zsh)
-
 # ALT-C - cd into the selected directory
 fzf-cd-widget() {
   setopt localoptions pipefail no_aliases 2> /dev/null
@@ -599,7 +597,7 @@ fzf-cd-widget() {
 }
 if [[ "${FZF_ALT_C_COMMAND-x}" != "" ]]; then
   zle     -N             fzf-cd-widget
-  bindkey -M emacs '\ec' fzf-cd-widget
-  bindkey -M vicmd '\ec' fzf-cd-widget
-  bindkey -M viins '\ec' fzf-cd-widget
+  bindkey -M emacs '^@' fzf-cd-widget
+  bindkey -M vicmd '^@' fzf-cd-widget
+  bindkey -M viins '^@' fzf-cd-widget
 fi
