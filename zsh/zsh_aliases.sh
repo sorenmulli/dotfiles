@@ -26,7 +26,6 @@ alias \
 
 alias xc='xclip -selection clipboard'
 alias tmux="tmux -2"
-alias sshup='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa'
 
 uge()       {curl -s https://ugenr.dk/ | grep -o -P -m 1 '(?=Uge).*(?=starter)';}
 vgdiff()    {nvim -p $(git ls-files -o -m --exclude-standard);}

@@ -15,6 +15,7 @@
 - Python is the main language
 - Succinct, idiomatic Python — use the language features, make simple things look simple
 - Modern ecosystem: uv, pydantic, ruff
+- Projects use `uv` tasks (defined in pyproject.toml) — prefer `task <name>` over raw commands
 - Follow Ruff defaults for style/linting
 - Minimal comments — the code should speak for itself
 - Type hints: yes. Docstrings on every function: no.

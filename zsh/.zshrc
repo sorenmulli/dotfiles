@@ -92,6 +92,9 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(my-accept-line)
 ### Fugitive shortcut
 bindkey -s "^G^G" "nvim -c 'Git | only'\n"
 
+#### SSH
+eval "$(keychain --eval --agents ssh id_rsa 2>/dev/null)"
+
 #### EDITOR
 export VISUAL=nvim
 export EDITOR="$VISUAL"
